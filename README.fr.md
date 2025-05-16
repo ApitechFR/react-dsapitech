@@ -2,7 +2,7 @@
     <img src="https://github.com/ApitechFR/react-dsapitech/releases/download/assets/dsapitech-react_repo-card.png">  
 </p>
 <p align="center">
-    🇫🇷 <i>React intégration pour le <a href="https://www.systeme-de-design.gouv.fr/">System de design d'Apitech' (alias DSApitech)</a></i> 🇫🇷 
+    🇫🇷 <i>React intégration pour le <a href="https://www.apitech.fr/">System de design d'Apitech' (alias DSApitech)</a></i> 🇫🇷 
     <br>
     <br>
     <a href="https://github.com/ApitechFR/react-dsapitech/actions">
@@ -27,9 +27,9 @@
 </p>
 
 > AVERTISSEMENT : Ce système de conception est uniquement destiné à être utilisé pour les sites web officiels des services publics français.  
-> Son objectif principal est de faciliter l'identification des sites gouvernementaux par les citoyens. [Voir les conditions](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/perimetre-d-application).
+> Son objectif principal est de faciliter l'identification des sites gouvernementaux par les citoyens. [Voir les conditions](https://www.apitech.fr/utilisation-et-organisation/perimetre-d-application).
 
-Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitech](https://github.com/GouvernementFR/dsapitech), l'implémentation en JS/CSS vanilla du DSApitech.
+Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitech](https://github.com/ApitechFR/dsapitech), l'implémentation en JS/CSS vanilla du DSApitech.
 
 <a href="https://youtu.be/5q88JgXUAY4">
   <img width="1712" alt="image" src="https://user-images.githubusercontent.com/6702424/224423044-c1823249-eab6-4844-af43-d059c01416af.png">
@@ -44,10 +44,10 @@ Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitec
 -   [x] Pas de [flash blanc lors du rechargement dans la configuration SSR](https://github.com/codegouvfr/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
 -   [x] La plupart des composants sont prêts pour les composants serveur. Les autres sont étiquetés avec `"use client";`
 -   [x] [Intégration parfaite avec tous les principaux frameworks React : Next.js (PagesDir et AppDir), Create React App, Vite](https://react-dsapitech.codegouv.studio/).
--   [x] (Presque) Tous [les composants](https://www.systeme-de-design.gouv.fr/elements-d-interface) sont [implémentés](https://components.react-dsapitech.codegouv.studio/)
+-   [x] (Presque) Tous [les composants](https://www.apitech.fr/elements-d-interface) sont [implémentés](https://components.react-dsapitech.codegouv.studio/)
 -   [x] Trois distributions modulables, choisissez les composants que vous importez. (Ce n'est pas tout dans un gros bundle .js)
 -   [x] Intégration optionnelle avec [MUI](https://mui.com/). Si vous utilisez des composants MUI, ils seront
-        automatiquement adaptés pour ressembler aux [composants DSApitech](https://www.systeme-de-design.gouv.fr/elements-d-interface). Voir [documentation](https://react-dsapitech.codegouv.studio/mui-integration).
+        automatiquement adaptés pour ressembler aux [composants DSApitech](https://www.apitech.fr/elements-d-interface). Voir [documentation](https://react-dsapitech.codegouv.studio/mui-integration).
 -   [x] Permet le CSS in JS. [Documentation](https://react-dsapitech.codegouv.studio/css-in-js)
 -   [x] i18n en option, les textes intégrés peuvent être affichés en plusieurs langues et l'utilisateur peut fournir des traductions supplémentaires.
 -   [x] [Support des bibliothèques de routage](https://react-dsapitech.codegouv.studio/routing) comme react-router.

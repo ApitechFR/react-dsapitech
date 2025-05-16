@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="https://github.com/ApitechFR/react-dsapitech/releases/download/assets/dsapitech-react_repo-card.png">  
+    <img src="https://avatars.githubusercontent.com/u/24912019?s=48&v=4">  
 </p>
 <p align="center">
-    🇫🇷 <i><a href="https://www.systeme-de-design.gouv.fr/">French State Design System</a> React toolkit</i> 🇫🇷 
+    🇫🇷 <i><a href="https://www.apitech.fr/">Apitech Design System</a> React toolkit</i> 🇫🇷 
     <br>
     <br>
     <a href="https://github.com/ApitechFR/react-dsapitech/actions">
@@ -29,9 +29,9 @@
 👉 Version française du README [ici](https://github.com/ApitechFR/react-dsapitech/blob/main/README.fr.md).
 
 > WARNING: This Design System is only meant to be used for official French's public service websites.  
-> Its main purpose is to make it easy to identify governmental websites for citizens. [See terms](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/perimetre-d-application).
+> Its main purpose is to make it easy to identify governmental websites for citizens. [See terms](https://www.apitech.fr/utilisation-et-organisation/perimetre-d-application).
 
-This module is an advanced toolkit that leverages [@apitech/dsapitech](https://github.com/GouvernementFR/dsapitech), the vanilla JS/CSS implementation of the DSApitech.
+This module is an advanced toolkit that leverages [@apitech/dsapitech](https://github.com/ApitechFR/dsapitech), the vanilla JS/CSS implementation of the DSApitech.
 
 <a href="https://youtu.be/5q88JgXUAY4">
   <img width="1712" alt="image" src="https://user-images.githubusercontent.com/6702424/224423044-c1823249-eab6-4844-af43-d059c01416af.png">
@@ -46,10 +46,10 @@ This module is an advanced toolkit that leverages [@apitech/dsapitech](https://g
 -   [x] No [white flash when reloading in SSR setup](https://github.com/codegouvfr/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
 -   [x] Most components are server component ready. The others are labeled with `"use client";`
 -   [x] [Perfect integration with all major React framework: Next.js (PagesDir and AppDir), Create React App, Vite](https://react-dsapitech.codegouv.studio/).
--   [x] (Almost) All [the components](https://www.systeme-de-design.gouv.fr/elements-d-interface) are [implemented](https://components.react-dsapitech.codegouv.studio/)
+-   [x] (Almost) All [the components](https://www.apitech.fr/elements-d-interface) are [implemented](https://components.react-dsapitech.codegouv.studio/)
 -   [x] Three shakable distribution, cherry pick the components you import. (It's not all in a big .js bundle)
 -   [x] Optional integration with [MUI](https://mui.com/). If you use MUI components they will
-        be automatically adapted to look like [DSApitech components](https://www.systeme-de-design.gouv.fr/elements-d-interface). See [documentation](https://react-dsapitech.codegouv.studio/mui-integration).
+        be automatically adapted to look like [DSApitech components](https://www.apitech.fr/elements-d-interface). See [documentation](https://react-dsapitech.codegouv.studio/mui-integration).
 -   [x] Enable the usage of CSS in JS solutions. [Doc](https://react-dsapitech.codegouv.studio/css-in-js).
 -   [x] Opt-in i18n, built in text can be displayed in multiple languages and user can provide extra translations.
 -   [x] [Support routing libraries](https://react-dsapitech.codegouv.studio/routing) like react-router.

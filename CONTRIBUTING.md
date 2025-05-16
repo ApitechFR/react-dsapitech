@@ -1,11 +1,11 @@
 `Hello friends 👋,
 
-Would you help us implement [the components](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/accordeon)?  
+Would you help us implement [the components](https://www.apitech.fr/elements-d-interface/composants/accordeon)?  
 Thank you so much to anyone that would!
 
 To get you started you can check out [the `<Alert />` component](https://components.react-dsapitech.codegouv.studio/?path=/docs/components-alert--default).
 
--   Here is it's definition from the SIG: [systeme-de-design.gouv.fr/elements-d-interface/composants/alerte](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/alerte) (Pro tip: the real source of truth for DSApitech component is [here](https://main--ds-gouv.netlify.app/example/component/))
+-   Here is it's definition from the SIG: [apitech.fr/elements-d-interface/composants/alerte](https://www.apitech.fr/elements-d-interface/composants/alerte) (Pro tip: the real source of truth for DSApitech component is [here](https://main--ds-gouv.netlify.app/example/component/))
 -   Here is its implementation [src/Alert.tsx](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Alert.tsx)
 -   Here is the file that generates its documentation: [stories/Alert.stories.tsx](https://github.com/ApitechFR/react-dsapitech/blob/main/stories/Alert.stories.tsx)
 
