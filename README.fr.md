@@ -41,7 +41,7 @@ Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitec
 -   [x] Toujours à jour avec les dernières évolutions du DSApitech.
         Code et Types générés à partir de [`@apitech/dsapitech`](https://www.npmjs.com/package/@apitech/dsapitech)`/dist/dsapitech.css`.
 -   [x] Exactement le même aspect et ressenti qu'avec [@apitech/dsapitech](https://www.npmjs.com/package/@apitech/dsapitech).
--   [x] Pas de [flash blanc lors du rechargement dans la configuration SSR](https://github.com/codegouvfr/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
+-   [x] Pas de [flash blanc lors du rechargement dans la configuration SSR](https://github.com/ApitechFR/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
 -   [x] La plupart des composants sont prêts pour les composants serveur. Les autres sont étiquetés avec `"use client";`
 -   [x] [Intégration parfaite avec tous les principaux frameworks React : Next.js (PagesDir et AppDir), Create React App, Vite](https://react-dsapitech.codegouv.studio/).
 -   [x] (Presque) Tous [les composants](https://www.apitech.fr/elements-d-interface) sont [implémentés](https://components.react-dsapitech.codegouv.studio/)
@@ -52,7 +52,7 @@ Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitec
 -   [x] i18n en option, les textes intégrés peuvent être affichés en plusieurs langues et l'utilisateur peut fournir des traductions supplémentaires.
 -   [x] [Support des bibliothèques de routage](https://react-dsapitech.codegouv.studio/routing) comme react-router.
 
-> 💡 Besoin de pages de connexion et d'inscription prêtes à l'emploi et conformes au DSApitech ? Consultez [keycloak-theme-dsapitech](https://github.com/codegouvfr/keycloak-theme-dsapitech).
+> 💡 Besoin de pages de connexion et d'inscription prêtes à l'emploi et conformes au DSApitech ? Consultez [keycloak-theme-dsapitech](https://github.com/ApitechFR/keycloak-theme-dsapitech).
 
 <p align="center">
   <a href="https://react-dsapitech.codegouv.studio/">🚀 Commencez ici 🚀 </a>

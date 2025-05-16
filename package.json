@@ -1,10 +1,10 @@
 {
     "name": "@apitech/react-dsapitech",
     "version": "1.23.4",
-    "description": "French State Design System React integration library",
+    "description": "Apitech Design System React integration library",
     "repository": {
         "type": "git",
-        "url": "git://github.com/codegouvfr/react-dsapitech.git"
+        "url": "git://github.com/ApitechFR/react-dsapitech.git"
     },
     "scripts": {
         "prepare": "patch-package",

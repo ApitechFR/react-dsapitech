@@ -43,7 +43,7 @@ This module is an advanced toolkit that leverages [@apitech/dsapitech](https://g
 -   [x] Always in up to date with latest the DSApitech evolutions.
         Code and Types generated from [`@apitech/dsapitech`](https://www.npmjs.com/package/@apitech/dsapitech)`/dist/dsapitech.css`.
 -   [x] Exactly the same look and feel than with [@apitech/dsapitech](https://www.npmjs.com/package/@apitech/dsapitech).
--   [x] No [white flash when reloading in SSR setup](https://github.com/codegouvfr/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
+-   [x] No [white flash when reloading in SSR setup](https://github.com/ApitechFR/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
 -   [x] Most components are server component ready. The others are labeled with `"use client";`
 -   [x] [Perfect integration with all major React framework: Next.js (PagesDir and AppDir), Create React App, Vite](https://react-dsapitech.codegouv.studio/).
 -   [x] (Almost) All [the components](https://www.apitech.fr/elements-d-interface) are [implemented](https://components.react-dsapitech.codegouv.studio/)
@@ -54,7 +54,7 @@ This module is an advanced toolkit that leverages [@apitech/dsapitech](https://g
 -   [x] Opt-in i18n, built in text can be displayed in multiple languages and user can provide extra translations.
 -   [x] [Support routing libraries](https://react-dsapitech.codegouv.studio/routing) like react-router.
 
-> 💡 Need ready to use, DSApitech compliant login and register pages? Checkout [keycloak-theme-dsapitech](https://github.com/codegouvfr/keycloak-theme-dsapitech).
+> 💡 Need ready to use, DSApitech compliant login and register pages? Checkout [keycloak-theme-dsapitech](https://github.com/ApitechFR/keycloak-theme-dsapitech).
 
 <p align="center">
   <a href="https://react-dsapitech.codegouv.studio/">🚀 Get started 🚀 </a>
