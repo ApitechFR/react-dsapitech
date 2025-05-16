@@ -1,0 +1,8 @@
+node_modules/
+/dist/
+/CHANGELOG.md
+/.yarn_home/
+/test/integration/
+/dsapitech/
+/src/fr/generatedFromCss/
+/storybook-static/

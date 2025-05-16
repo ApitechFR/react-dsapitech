@@ -1,0 +1,66 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+
+  test_format:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.created && github.repository != 'garronej/ts-ci' }}
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - uses: bahmutov/npm-install@v1
+    - name: If this step fails run 'yarn format' then commit again.
+      run: yarn format:check
+  test:
+    runs-on: ${{ matrix.os }}
+    needs: test_format
+    strategy:
+      matrix:
+        #node: [ '16', '17' ]
+        node: [ '20' ]
+        #os: [ windows-latest, ubuntu-latest ]
+        os: [ ubuntu-latest ]
+    name: Test with Node v${{ matrix.node }} on ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+    - uses: bahmutov/npm-install@v1
+    - run: yarn build
+    - run: yarn test
+
+  deploy_storybook:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    needs: test
+    steps:
+      # Manual Checkout
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      # Set up Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: yarn install # default: npm ci
+          build_command: yarn build-storybook # default: npm run build-storybook
+          path: storybook-static # default: dist/storybook
+          checkout: false # default: true

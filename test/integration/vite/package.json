@@ -1,0 +1,34 @@
+{
+    "name": "react-dsapitech-test-app-vite",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "copy-dsapitech-to-public": "node node_modules/@apitech/react-dsapitech/bin/copy-dsapitech-to-public.js",
+        "only-include-used-icons": "node node_modules/@apitech/react-dsapitech/bin/only-include-used-icons.js",
+        "predev": "yarn copy-dsapitech-to-public && yarn only-include-used-icons",
+        "prebuild": "yarn copy-dsapitech-to-public && yarn only-include-used-icons"
+    },
+    "dependencies": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-router-dom": "^6.8.1",
+        "@mui/material": "^5.14.18",
+        "@emotion/styled": "^11.11.0",
+        "@emotion/react": "^11.11.0",
+        "@mui/x-date-pickers": "^6.18.2",
+        "@mui/icons-material": "^5.14.18",
+        "dayjs": "^1.11.6",
+        "@apitech/react-dsapitech": "file:../../../dist"
+    },
+    "devDependencies": {
+        "@types/react": "18.0.21",
+        "@types/react-dom": "18.0.6",
+        "@vitejs/plugin-react": "^2.1.0",
+        "typescript": "^4.6.4",
+        "vite": "^3.1.0"
+    }
+}
