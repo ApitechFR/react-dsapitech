@@ -1,5 +1,5 @@
 {
-    "name": "react-dsapitech-test-app-cra",
+    "name": "react-dsfr-test-app-cra",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -13,7 +13,7 @@
         "@mui/icons-material": "^5.14.18",
         "@mui/x-date-pickers": "^6.18.2",
         "dayjs": "^1.11.6",
-        "@apitech/react-dsapitech": "file:../../../dist"
+        "@codegouvfr/react-dsfr": "file:../../../dist"
     },
     "devDependencies": {
         "@types/node": "^16.7.13",
@@ -26,10 +26,10 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "copy-dsapitech-to-public": "node node_modules/@apitech/react-dsapitech/bin/copy-dsapitech-to-public.js",
-        "only-include-used-icons": "node node_modules/@apitech/react-dsapitech/bin/only-include-used-icons.js",
-        "prestart": "yarn copy-dsapitech-to-public && yarn only-include-used-icons",
-        "prebuild": "yarn copy-dsapitech-to-public && yarn only-include-used-icons"
+        "copy-dsfr-to-public": "node node_modules/@codegouvfr/react-dsfr/bin/copy-dsfr-to-public.js",
+        "only-include-used-icons": "node node_modules/@codegouvfr/react-dsfr/bin/only-include-used-icons.js",
+        "prestart": "yarn copy-dsfr-to-public && yarn only-include-used-icons",
+        "prebuild": "yarn copy-dsfr-to-public && yarn only-include-used-icons"
     },
     "eslintConfig": {
         "extends": [

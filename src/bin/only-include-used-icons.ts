@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * This script is ran with `npx react-dsapitech include-used-icons`
+ * This script is ran with `npx react-dsfr include-used-icons`
  * It scans your codebase to find which icons are used and only include those in the final build.
- * Do do that it patches the node_modules/@apitech/react-dsapitech/dist/utility/icons/icons.css file
- * and the public/dsapitech/utility/icons/icons.css file (if applicable, not in Next.js for example).
+ * Do do that it patches the node_modules/@codegouvfr/react-dsfr/dist/utility/icons/icons.css file
+ * and the public/dsfr/utility/icons/icons.css file (if applicable, not in Next.js for example).
  * The script can figure out where your node_modules and public directories are.
  *
  * There are two optional arguments that you can use:
@@ -31,20 +31,20 @@ import { modifyHtmlHrefs } from "./tools/modifyHtmlHrefs";
 
 export const PATH_OF_ICONS_JSON = pathJoin("utility", "icons", "icons.json");
 
-export const PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSApitech = pathJoin(
+export const PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSFR = pathJoin(
     "utility",
     "icons",
-    "dsapitech_remixicon.css"
+    "dsfr_remixicon.css"
 );
 
-export type Icon = Icon.Dsapitech | Icon.Remixicon;
+export type Icon = Icon.Dsfr | Icon.Remixicon;
 
 export namespace Icon {
     export type Common = {
         iconId: string;
     };
 
-    export type Dsapitech = Common & {
+    export type Dsfr = Common & {
         prefix: "fr-icon-";
         svgRelativePath: string;
     };
@@ -55,7 +55,7 @@ export namespace Icon {
     };
 }
 
-type IconLike = Icon.Dsapitech | Omit<Icon.Remixicon, "rawSvgCode">;
+type IconLike = Icon.Dsfr | Omit<Icon.Remixicon, "rawSvgCode">;
 
 export function generateIconsRawCssCode(params: {
     usedIcons: IconLike[];
@@ -112,17 +112,17 @@ export function generateIconsRawCssCode(params: {
 type CommandContext = {
     projectDirPath: string;
     srcFilePaths: string[];
-    dsapitechDirPath: string;
+    dsfrDirPath: string;
     spaParams:
         | {
-              dsapitechDirPath_static: string;
+              dsfrDirPath_static: string;
               htmlFilePath: string;
           }
         | undefined;
     isSilent: boolean;
 };
 
-const CODEGOUV_REACT_DSApitech: string = JSON.parse(
+const CODEGOUV_REACT_DSFR: string = JSON.parse(
     fs.readFileSync(pathJoin(getProjectRoot(), "package.json")).toString("utf8")
 )["name"];
 
@@ -146,7 +146,7 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
     special_case_for_our_storybook: {
         const projectDirPath = process.cwd();
 
-        const isProjectPathReactDsapitech = await (async () => {
+        const isProjectPathReactDsfr = await (async () => {
             const packageJsonFilePath = pathJoin(projectDirPath, "package.json");
 
             if (!(await existsAsync(packageJsonFilePath))) {
@@ -155,10 +155,10 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
 
             const packageJson = JSON.parse((await readFile(packageJsonFilePath)).toString("utf8"));
 
-            return packageJson["name"] === CODEGOUV_REACT_DSApitech;
+            return packageJson["name"] === CODEGOUV_REACT_DSFR;
         })();
 
-        if (!isProjectPathReactDsapitech) {
+        if (!isProjectPathReactDsfr) {
             break special_case_for_our_storybook;
         }
 
@@ -196,7 +196,7 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
         return {
             projectDirPath,
             srcFilePaths,
-            "dsapitechDirPath": pathJoin(projectDirPath, "dist", "dsapitech"),
+            "dsfrDirPath": pathJoin(projectDirPath, "dist", "dsfr"),
             "spaParams": undefined,
             "isSilent": false
         };
@@ -212,7 +212,7 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
         );
 
         const doesExist = await existsAsync(
-            pathJoin(...[nodeModulesDirPath, ...CODEGOUV_REACT_DSApitech.split("/")])
+            pathJoin(...[nodeModulesDirPath, ...CODEGOUV_REACT_DSFR.split("/")])
         );
 
         if (!doesExist) {
@@ -222,22 +222,22 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
         return nodeModulesDirPath;
     })(0);
 
-    const dsapitechDirPath = pathJoin(
-        ...[nodeModulesDirPath, ...CODEGOUV_REACT_DSApitech.split("/"), "dsapitech"]
+    const dsfrDirPath = pathJoin(
+        ...[nodeModulesDirPath, ...CODEGOUV_REACT_DSFR.split("/"), "dsfr"]
     );
 
-    const dsapitechDirPath_static = await (async () => {
-        const dsapitechDirPath_static = pathJoin(await readPublicDirPath({ projectDirPath }), "dsapitech");
+    const dsfrDirPath_static = await (async () => {
+        const dsfrDirPath_static = pathJoin(await readPublicDirPath({ projectDirPath }), "dsfr");
 
-        if (!(await existsAsync(dsapitechDirPath_static))) {
+        if (!(await existsAsync(dsfrDirPath_static))) {
             return undefined;
         }
 
-        return dsapitechDirPath_static;
+        return dsfrDirPath_static;
     })();
 
     const htmlFilePath = await (async () => {
-        if (dsapitechDirPath_static === undefined) {
+        if (dsfrDirPath_static === undefined) {
             return undefined;
         }
 
@@ -252,11 +252,11 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
         }
 
         cra: {
-            if (dsapitechDirPath_static === undefined) {
+            if (dsfrDirPath_static === undefined) {
                 break cra;
             }
 
-            const filePath = pathJoin(pathDirname(dsapitechDirPath_static), "index.html");
+            const filePath = pathJoin(pathDirname(dsfrDirPath_static), "index.html");
 
             if (!fs.existsSync(filePath)) {
                 break cra;
@@ -294,7 +294,7 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
                             pathJoin(projectDirPath, relativeDirPath, PATH_OF_ICONS_JSON)
                         )
                     ) {
-                        // We don't want to search in public/dsapitech
+                        // We don't want to search in public/dsfr
                         return false;
                     }
 
@@ -336,14 +336,14 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
                             return false;
                         }
 
-                        if (parsedPackageJson["name"] === "@apitech/dsapitech-chart") {
+                        if (parsedPackageJson["name"] === "@gouvfr/dsfr-chart") {
                             return false;
                         }
 
                         for (const packageName of [
-                            CODEGOUV_REACT_DSApitech,
-                            "@apitech/dsapitech",
-                            "@dataesr/react-dsapitech"
+                            CODEGOUV_REACT_DSFR,
+                            "@gouvfr/dsfr",
+                            "@dataesr/react-dsfr"
                         ]) {
                             if (
                                 Object.keys({
@@ -361,7 +361,7 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
 
                     if (
                         pathDirname(relativeDirPath).endsWith(
-                            pathJoin(...CODEGOUV_REACT_DSApitech.split("/"))
+                            pathJoin(...CODEGOUV_REACT_DSFR.split("/"))
                         )
                     ) {
                         return pathBasename(relativeDirPath) === "src";
@@ -395,16 +395,16 @@ async function getCommandContext(args: string[]): Promise<CommandContext> {
     return {
         projectDirPath,
         srcFilePaths,
-        dsapitechDirPath,
+        dsfrDirPath,
         "spaParams": (() => {
-            if (dsapitechDirPath_static === undefined) {
+            if (dsfrDirPath_static === undefined) {
                 return undefined;
             }
 
             assert(htmlFilePath !== undefined);
 
             return {
-                dsapitechDirPath_static,
+                dsfrDirPath_static,
                 htmlFilePath
             };
         })(),
@@ -418,29 +418,29 @@ export async function main(args: string[]) {
     const log = commandContext.isSilent ? undefined : console.log;
 
     const icons: Icon[] = JSON.parse(
-        (await readFile(pathJoin(commandContext.dsapitechDirPath, PATH_OF_ICONS_JSON))).toString("utf8")
+        (await readFile(pathJoin(commandContext.dsfrDirPath, PATH_OF_ICONS_JSON))).toString("utf8")
     );
 
     const { usedIconClassNames } = await (async function getUsedIconClassNames() {
-        const prefixes = { "prefixDsapitech": "fr-icon-", "prefixRemixIcon": "ri-" } as const;
+        const prefixes = { "prefixDsfr": "fr-icon-", "prefixRemixIcon": "ri-" } as const;
 
         assert<Equals<typeof prefixes[keyof typeof prefixes], Icon["prefix"]>>();
 
-        const { prefixDsapitech, prefixRemixIcon, ...rest } = prefixes;
+        const { prefixDsfr, prefixRemixIcon, ...rest } = prefixes;
 
         assert<Equals<keyof typeof rest, never>>();
 
-        const { availableDsapitechIconClassNames, availableRemixiconIconClassNames } = (() => {
+        const { availableDsfrIconClassNames, availableRemixiconIconClassNames } = (() => {
             const allAvailableIconClassNames = icons.map(
                 ({ prefix, iconId }) => `${prefix}${iconId}`
             );
 
-            const availableDsapitechIconClassNames: string[] = [];
+            const availableDsfrIconClassNames: string[] = [];
             const availableRemixiconIconClassNames: string[] = [];
 
             allAvailableIconClassNames.forEach(className => {
-                if (className.startsWith(prefixDsapitech)) {
-                    availableDsapitechIconClassNames.push(className);
+                if (className.startsWith(prefixDsfr)) {
+                    availableDsfrIconClassNames.push(className);
                     return;
                 }
                 if (className.startsWith(prefixRemixIcon)) {
@@ -449,7 +449,7 @@ export async function main(args: string[]) {
                 }
             });
 
-            return { availableDsapitechIconClassNames, availableRemixiconIconClassNames };
+            return { availableDsfrIconClassNames, availableRemixiconIconClassNames };
         })();
 
         const setUsedIconClassNames = new Set<string>();
@@ -459,7 +459,7 @@ export async function main(args: string[]) {
                 const rawFileContent = (await readFile(srcFilePath)).toString("utf8");
 
                 [
-                    ...(!rawFileContent.includes(prefixDsapitech) ? [] : availableDsapitechIconClassNames),
+                    ...(!rawFileContent.includes(prefixDsfr) ? [] : availableDsfrIconClassNames),
                     ...(!rawFileContent.includes(prefixRemixIcon)
                         ? []
                         : availableRemixiconIconClassNames)
@@ -499,8 +499,8 @@ export async function main(args: string[]) {
             "patchedRawCssCodeForCompatWithRemixIcon": fs
                 .readFileSync(
                     pathJoin(
-                        commandContext.dsapitechDirPath,
-                        PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSApitech
+                        commandContext.dsfrDirPath,
+                        PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSFR
                     )
                 )
                 .toString("utf8"),
@@ -514,10 +514,10 @@ export async function main(args: string[]) {
     const iconsMinCssRelativePath = pathJoin("utility", "icons", "icons.min.css");
 
     await Promise.all(
-        [commandContext.dsapitechDirPath, commandContext.spaParams?.dsapitechDirPath_static]
+        [commandContext.dsfrDirPath, commandContext.spaParams?.dsfrDirPath_static]
             .filter(exclude(undefined))
-            .map(async dsapitechDirPath => {
-                const cssFilePath = pathJoin(dsapitechDirPath, iconsMinCssRelativePath);
+            .map(async dsfrDirPath => {
+                const cssFilePath = pathJoin(dsfrDirPath, iconsMinCssRelativePath);
 
                 if (Buffer.compare(await readFile(cssFilePath), rawIconCssCodeBuffer) === 0) {
                     return;
@@ -537,10 +537,10 @@ export async function main(args: string[]) {
     await Promise.all([
         (async function generateUsedRemixiconFiles() {
             await Promise.all(
-                [commandContext.dsapitechDirPath, commandContext.spaParams?.dsapitechDirPath_static]
+                [commandContext.dsfrDirPath, commandContext.spaParams?.dsfrDirPath_static]
                     .filter(exclude(undefined))
-                    .map(async dsapitechDistDirPath => {
-                        const remixiconDirPath = pathJoin(dsapitechDistDirPath, "icons", "remixicon");
+                    .map(async dsfrDistDirPath => {
+                        const remixiconDirPath = pathJoin(dsfrDistDirPath, "icons", "remixicon");
 
                         if (!fs.existsSync(remixiconDirPath)) {
                             fs.mkdirSync(remixiconDirPath);
@@ -560,19 +560,19 @@ export async function main(args: string[]) {
                     })
             );
         })(),
-        (async function copyUsedDsapitechIconsToStatic() {
+        (async function copyUsedDsfrIconsToStatic() {
             if (commandContext.spaParams === undefined) {
                 return;
             }
 
-            const { dsapitechDirPath_static } = commandContext.spaParams;
+            const { dsfrDirPath_static } = commandContext.spaParams;
 
             await Promise.all(
                 usedIcons
                     .map(icon => (icon.prefix !== "fr-icon-" ? undefined : icon))
                     .filter(exclude(undefined))
                     .map(({ svgRelativePath }) =>
-                        ([commandContext.dsapitechDirPath, dsapitechDirPath_static] as const).map(
+                        ([commandContext.dsfrDirPath, dsfrDirPath_static] as const).map(
                             baseDirPath =>
                                 pathJoin(
                                     baseDirPath,

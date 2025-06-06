@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import { symToStr } from "tsafe/symToStr";
-import "@apitech/dsapitech-chart/GaugeChart/gauge-chart.common";
-import "@apitech/dsapitech-chart/GaugeChart/gauge-chart.css";
+import "@gouvfr/dsfr-chart/GaugeChart/gauge-chart.common";
+import "@gouvfr/dsfr-chart/GaugeChart/gauge-chart.css";
 import { chartWrapper, BaseChartProps, stringifyObjectValue, ChartColor } from "./chartWrapper";
 
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            // https://github.com/GouvernementFR/dsapitech-chart/blob/v1.0.0/src/components/GaugeChart.vue#L55
+            // https://github.com/GouvernementFR/dsfr-chart/blob/v1.0.0/src/components/GaugeChart.vue#L55
             "gauge-chart": {
                 value: string;
                 init: string;
@@ -28,7 +28,7 @@ export type GaugeChartBaseProps = {
 
 export type GaugeChartProps = GaugeChartBaseProps & BaseChartProps;
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/charts-gaugechart> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/charts-gaugechart> */
 export const GaugeChart = chartWrapper(
     (props: GaugeChartBaseProps) => <gauge-chart {...stringifyObjectValue(props)} />,
     "gauge-chart"

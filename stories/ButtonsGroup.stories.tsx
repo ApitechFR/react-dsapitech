@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { ButtonsGroup },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/groupe-de-boutons)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/ButtonsGroup.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/groupe-de-boutons)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/ButtonsGroup.tsx)`,
     "argTypes": {
         "inlineLayoutWhen": {
             "options": (() => {
@@ -36,7 +36,7 @@ const { meta, getStory } = getStoryFactory({
         },
         "buttonsEquisized": {
             "description": ` 
-                Default: false, TODO: Report @apitech/dsapitech bug: only applies when
+                Default: false, TODO: Report @gouvfr/dsfr bug: only applies when
                 inlineLayout: "never" | "always"
             `,
             "control": { "type": "boolean" }

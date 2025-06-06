@@ -9,7 +9,7 @@ import { useRerenderOnChange } from "../tools/StatefulObservable/hooks";
 import { createConsentBannerAndConsentManagement } from "./ConsentBannerAndConsentManagement";
 import { isBrowser } from "../tools/isBrowser";
 
-export const defaultLocalStorageKeyPrefix = "@apitech/react-dsapitech finalityConsent";
+export const defaultLocalStorageKeyPrefix = "@codegouvfr/react-dsfr finalityConsent";
 
 export function createConsentManagement<
     FinalityDescription extends Record<

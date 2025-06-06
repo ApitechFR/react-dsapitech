@@ -7,8 +7,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Tag },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tag)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Tag.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tag)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Tag.tsx)`,
     "argTypes": {
         "dismissible": {
             "control": { "type": "boolean" }
@@ -34,6 +34,19 @@ const { meta, getStory } = getStoryFactory({
             "description": `Can be used to attach extra props to the underlying native button.  
             Example: \`{ "aria-controls": "fr-modal-1", onMouseEnter: event => {...} }\``,
             "control": { "type": null }
+        },
+
+        "as": {
+            "options": (() => {
+                const options = ["p", "span", "button", "a", undefined] as const;
+
+                assert<Equals<typeof options[number], TagProps["as"]>>();
+
+                return options;
+            })(),
+            "control": { type: "select", labels: { null: "default p element" } },
+            "description":
+                "You can specify a 'span' element instead of default 'p' if the badge is inside a `<p>`. 'button' and 'a' are implicit."
         },
         "children": {
             "description": "The label of the button",
@@ -106,4 +119,9 @@ export const TagPressed = getStory({
     "nativeButtonProps": {
         onClick: () => console.log("click")
     }
+});
+
+export const AsSpan = getStory({
+    "children": "Label button",
+    as: "span"
 });

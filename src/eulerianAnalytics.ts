@@ -1,4 +1,4 @@
-import { prDsapitechLoaded } from "./start";
+import { prDsfrLoaded } from "./start";
 
 export type EulerianAnalyticsParams = {
     domain: string;
@@ -71,25 +71,25 @@ export type EulerianAnalyticsParams = {
 };
 
 export async function startEulerianAnalytics(params: EulerianAnalyticsParams) {
-    await prDsapitechLoaded;
+    await prDsfrLoaded;
 
     // @ts-expect-error
-    window.dsapitech.analytics = params;
+    window.dsfr.analytics = params;
 
     // @ts-expect-error
-    await import("./dsapitech/analytics/analytics.module.min");
+    await import("./dsfr/analytics/analytics.module.min");
 
     //@ts-expect-error
-    await dsapitech.analytics.readiness;
+    await dsfr.analytics.readiness;
 
     return {
         "enable": () => {
             // @ts-expect-error
-            window.dsapitech.analytics.opt.enable();
+            window.dsfr.analytics.opt.enable();
         },
         "disable": () => {
             // @ts-expect-error
-            window.dsapitech.analytics.opt.disable();
+            window.dsfr.analytics.opt.disable();
         }
     };
 }

@@ -6,8 +6,8 @@ const { meta, getStory } = getStoryFactory<SkipLinksProps>({
     sectionName,
     wrappedComponent: { SkipLinks },
     description: `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/lien-d-evitement)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/SkipLinks.tsx)`
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/lien-d-evitement)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/SkipLinks.tsx)`
 });
 
 export default meta;

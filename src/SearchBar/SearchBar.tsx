@@ -41,7 +41,7 @@ export type SearchBarProps = {
 };
 
 /**
- * @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-input>
+ * @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-input>
  * */
 export const SearchBar = memo(
     forwardRef<HTMLDivElement, SearchBarProps>((props, ref) => {

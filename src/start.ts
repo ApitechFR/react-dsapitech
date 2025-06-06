@@ -44,22 +44,22 @@ export async function start(params: Params) {
     });
 
     // @ts-expect-error
-    window.dsapitech = {
+    window.dsfr = {
         verbose,
         "mode": "react"
     };
 
     // @ts-expect-error
-    await import("./dsapitech/dsapitech.module");
+    await import("./dsfr/dsfr.module");
 
-    dDsapitechLoaded.resolve();
+    dDsfrLoaded.resolve();
 
     registerEffectAction(() => {
         // @ts-expect-error
-        window.dsapitech.start();
+        window.dsfr.start();
     });
 }
 
-const dDsapitechLoaded = new Deferred<void>();
+const dDsfrLoaded = new Deferred<void>();
 
-export const prDsapitechLoaded = dDsapitechLoaded.pr;
+export const prDsfrLoaded = dDsfrLoaded.pr;

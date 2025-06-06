@@ -57,7 +57,7 @@ export namespace AlertProps {
     export type Severity = ExtractSeverity<FrClassName>;
 }
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-alert> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-alert> */
 export const Alert = memo(
     forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
         const {

@@ -53,8 +53,8 @@ export namespace InputProps {
         >;
         /** Props forwarded to the underlying <label /> element */
         nativeLabelProps?: DetailedHTMLProps<
-            LabelHTMLAttributes<HTMLInputElement>,
-            HTMLInputElement
+            LabelHTMLAttributes<HTMLLabelElement>,
+            HTMLLabelElement
         >;
 
         nativeTextAreaProps?: never;
@@ -70,8 +70,8 @@ export namespace InputProps {
         >;
         /** Props forwarded to the underlying <label /> element */
         nativeLabelProps?: DetailedHTMLProps<
-            LabelHTMLAttributes<HTMLTextAreaElement>,
-            HTMLTextAreaElement
+            LabelHTMLAttributes<HTMLLabelElement>,
+            HTMLLabelElement
         >;
 
         nativeInputProps?: never;
@@ -79,7 +79,7 @@ export namespace InputProps {
 }
 
 /**
- * @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-input>
+ * @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-input>
  * */
 export const Input = memo(
     forwardRef<HTMLDivElement, InputProps>((props, ref) => {

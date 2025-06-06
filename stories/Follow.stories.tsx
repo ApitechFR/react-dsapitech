@@ -8,9 +8,9 @@ const { meta, getStory } = getStoryFactory<FollowProps>({
     sectionName,
     wrappedComponent: { Follow },
     description: `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/lettre-d-information-et-reseaux-sociaux)
-- [See DSApitech demos](https://main--ds-gouv.netlify.app/example/component/follow/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Follow.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/lettre-d-information-et-reseaux-sociaux)
+- [See DSFR demos](https://main--ds-gouv.netlify.app/example/component/follow/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Follow.tsx)`,
     argTypes: {
         classes: {
             control: { type: null },

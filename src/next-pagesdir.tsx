@@ -11,9 +11,9 @@ import type { ColorScheme } from "./useIsDark";
 import { isBrowser } from "./tools/isBrowser";
 import { objectKeys } from "tsafe/objectKeys";
 import { fontUrlByFileBasename } from "./next-app-router/zz_internal/fontUrlByFileBasename";
-import AppleTouchIcon from "./dsapitech/favicon/apple-touch-icon.png";
-import FaviconSvg from "./dsapitech/favicon/favicon.svg";
-import FaviconIco from "./dsapitech/favicon/favicon.ico";
+import AppleTouchIcon from "./dsfr/favicon/apple-touch-icon.png";
+import FaviconSvg from "./dsfr/favicon/favicon.svg";
+import FaviconIco from "./dsfr/favicon/favicon.ico";
 import { getAssetUrl } from "./tools/getAssetUrl";
 import { fr } from "./fr";
 import { start } from "./start";
@@ -21,13 +21,13 @@ import type { RegisterLink, RegisteredLinkProps } from "./link";
 import { setLink } from "./link";
 import { setUseLang } from "./i18n";
 import { assert } from "tsafe/assert";
-import "./assets/dsapitech_plus_icons.css";
+import "./assets/dsfr_plus_icons.css";
 
 const isProduction = process.env.NODE_ENV !== "development";
 
 export type { RegisterLink, RegisteredLinkProps };
 
-export type CreateNextDsapitechIntegrationApiParams = {
+export type CreateNextDsfrIntegrationApiParams = {
     defaultColorScheme: ColorScheme | "system";
     /** Default: false */
     verbose?: boolean;
@@ -48,14 +48,14 @@ export type CreateNextDsapitechIntegrationApiParams = {
      *
      * For example:
      * ```txt
-     * With a policy name of "react-dsapitech":
+     * With a policy name of "react-dsfr":
      * Content-Security-Policy:
      *  require-trusted-types-for 'script';
-     *  trusted-types react-dsapitech react-dsapitech-asap nextjs nextjs#bundler;
+     *  trusted-types react-dsfr react-dsfr-asap nextjs nextjs#bundler;
      * ```
      *
      * @see https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
-     * @default "react-dsapitech"
+     * @default "react-dsfr"
      */
     trustedTypesPolicyName?: string;
     /**
@@ -89,12 +89,12 @@ function readIsDarkInCookie(cookie: string) {
     }
 }
 
-export type NextDsapitechIntegrationApi = {
-    withDsapitech: <AppComponent extends NextComponentType<any, any, any>>(
+export type NextDsfrIntegrationApi = {
+    withDsfr: <AppComponent extends NextComponentType<any, any, any>>(
         App: AppComponent
     ) => AppComponent;
-    dsapitechDocumentApi: {
-        augmentDocumentForDsapitech: (Document: NextComponentType<any, any, any>) => void;
+    dsfrDocumentApi: {
+        augmentDocumentForDsfr: (Document: NextComponentType<any, any, any>) => void;
         getColorSchemeHtmlAttributes: (
             props: DocumentProps
         ) =>
@@ -103,9 +103,9 @@ export type NextDsapitechIntegrationApi = {
     };
 };
 
-export function createNextDsapitechIntegrationApi(
-    params: CreateNextDsapitechIntegrationApiParams
-): NextDsapitechIntegrationApi {
+export function createNextDsfrIntegrationApi(
+    params: CreateNextDsfrIntegrationApiParams
+): NextDsfrIntegrationApi {
     const {
         defaultColorScheme,
         verbose = false,
@@ -113,7 +113,7 @@ export function createNextDsapitechIntegrationApi(
         preloadFonts = [],
         doPersistDarkModePreferenceWithCookie = false,
         useLang,
-        trustedTypesPolicyName = "react-dsapitech",
+        trustedTypesPolicyName = "react-dsfr",
         doDisableFavicon = false
     } = params;
 
@@ -147,12 +147,12 @@ export function createNextDsapitechIntegrationApi(
         });
     }
 
-    const isDarkPropKey = "dsapitechIsDark";
+    const isDarkPropKey = "dsfrIsDark";
 
-    function withDsapitech<AppComponent extends NextComponentType<any, any, any>>(
+    function withDsfr<AppComponent extends NextComponentType<any, any, any>>(
         App: AppComponent
     ): AppComponent {
-        function AppWithDsapitech({
+        function AppWithDsfr({
             [isDarkPropKey]: isDark,
             ...props
         }: AppProps & Record<typeof isDarkPropKey, boolean | undefined>) {
@@ -242,13 +242,13 @@ export function createNextDsapitechIntegrationApi(
             );
         }
 
-        Object.keys(App).forEach(key => ((AppWithDsapitech as any)[key] = (App as any)[key]));
+        Object.keys(App).forEach(key => ((AppWithDsfr as any)[key] = (App as any)[key]));
 
         if (doPersistDarkModePreferenceWithCookie) {
             const super_getInitialProps =
                 App.getInitialProps?.bind(App) ?? DefaultApp.getInitialProps.bind(DefaultApp);
 
-            (AppWithDsapitech as any).getInitialProps = async (appContext: AppContext) => {
+            (AppWithDsfr as any).getInitialProps = async (appContext: AppContext) => {
                 const initialProps = await super_getInitialProps(appContext);
 
                 let isDark: boolean | undefined = undefined;
@@ -276,12 +276,12 @@ export function createNextDsapitechIntegrationApi(
             };
         }
 
-        AppWithDsapitech.displayName = AppWithDsapitech.name;
+        AppWithDsfr.displayName = AppWithDsfr.name;
 
-        return AppWithDsapitech as any;
+        return AppWithDsfr as any;
     }
 
-    function augmentDocumentForDsapitech(Document: NextComponentType<any, any, any>): void {
+    function augmentDocumentForDsfr(Document: NextComponentType<any, any, any>): void {
         let super_getInitialProps = Document.getInitialProps?.bind(Document);
 
         if (super_getInitialProps === undefined) {
@@ -359,9 +359,9 @@ export function createNextDsapitechIntegrationApi(
     }
 
     return {
-        withDsapitech,
-        "dsapitechDocumentApi": {
-            augmentDocumentForDsapitech,
+        withDsfr,
+        "dsfrDocumentApi": {
+            augmentDocumentForDsfr,
             getColorSchemeHtmlAttributes
         }
     };

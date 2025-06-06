@@ -9,8 +9,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { SearchBar },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/barre-de-recherche)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/SearchBar/SearchBar.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/barre-de-recherche)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/SearchBar/SearchBar.tsx)`,
     "argTypes": {
         "big": {
             "description": "Use the big variant if you have space to spare",
@@ -52,7 +52,7 @@ If you you do not plan to provide any realtime hinting to the user as he types t
 callback that will be called when the user click on the search button or press enter.
 
 \`\`\`tsx
-import { SearchBar } from "@apitech/react-dsapitech/SearchBar";
+import { SearchBar } from "@codegouvfr/react-dsfr/SearchBar";
 
 <SearchBar
     ...
@@ -109,7 +109,7 @@ export const WithControlledInput = getStory(
         "description": ` 
 
 \`\`\`tsx
-import { SearchBar } from "@apitech/react-dsapitech/SearchBar";
+import { SearchBar } from "@codegouvfr/react-dsfr/SearchBar";
         
 function Root(){
         
@@ -130,7 +130,7 @@ function Root(){
                         type={type}
                         value={search}
                         // Note: The default behavior for an input of type 'text' is to clear the input value when the escape key is pressed.
-                        // However, due to a bug in @apitech/dsapitech the escape key event is not propagated to the input element.
+                        // However, due to a bug in @gouvfr/dsfr the escape key event is not propagated to the input element.
                         // As a result this onChange is not called when the escape key is pressed.
                         onChange={event => onSearchChange(event.currentTarget.value)}
                         // Same goes for the keydown event so this is useless but we hope the bug will be fixed soon.
@@ -167,15 +167,15 @@ export const WithMuiAutocomplete = getStory(
 If you want to feature a modern search experience with realtime hinting you can omit providing a \`onSearchButtonClick\` callback and instead
 make sure you provide an overlay with the search results in the the \`renderSearchInput\` function.  
         
-As, to this day, the DSApitech do not provide any component to help you with that, you are on your own for implementing the overlay.  
+As, to this day, the DSFR do not provide any component to help you with that, you are on your own for implementing the overlay.  
 You can achieve great result by using [MUI's autocomplete](https://mui.com/material-ui/react-autocomplete/) component.  
 [Implementation example](https://github.com/mui/material-ui/issues/37838).  
-If you go with MUI make sure to use the [\`<MuiDsapitechProvider />\`](https://react-dsapitech.codegouv.studio/mui).  
+If you go with MUI make sure to use the [\`<MuiDsfrProvider />\`](https://react-dsfr.codegouv.studio/mui).  
         
 \`\`\`tsx
         
 import Autocomplete from "@mui/material/Autocomplete";
-import { cx } from "@apitech/react-dsapitech/tools/cx";
+import { cx } from "@codegouvfr/react-dsfr/tools/cx";
         
 type MySearchInputProps = {
     className?: string;

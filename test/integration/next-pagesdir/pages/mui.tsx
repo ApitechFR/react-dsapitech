@@ -1,8 +1,8 @@
 
 import * as React from "react";
-import { MuiDsapitechThemeProvider } from "@apitech/react-dsapitech/mui";
+import { MuiDsfrThemeProvider } from "@codegouvfr/react-dsfr/mui";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { useIsDark } from "@apitech/react-dsapitech/useIsDark";
+import { useIsDark } from "@codegouvfr/react-dsfr/useIsDark";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
@@ -113,9 +113,9 @@ export default function Mui() {
 
 	return (
 		isProviderEnabled ? (
-			<MuiDsapitechThemeProvider>
+			<MuiDsfrThemeProvider>
 				<Children />
-			</MuiDsapitechThemeProvider>
+			</MuiDsfrThemeProvider>
 		) : (
 			<ThemeProvider theme={isDark ? muiDefaultDarkTheme : muiDefaultLightTheme}>
 				<Children />

@@ -7,7 +7,7 @@ import { assert } from "tsafe/assert";
 
 export type { RegisterLink, RegisteredLinkProps };
 
-export function startReactDsapitech(params: {
+export function startReactDsfr(params: {
     defaultColorScheme: ColorScheme | "system";
     /** Default: false */
     verbose?: boolean;
@@ -28,15 +28,15 @@ export function startReactDsapitech(params: {
      *
      * For example:
      * ```txt
-     * With a policy name of "react-dsapitech":
+     * With a policy name of "react-dsfr":
      * Content-Security-Policy:
      *  require-trusted-types-for 'script';
-     *  trusted-types react-dsapitech react-dsapitech-asap nextjs nextjs#bundler;
+     *  trusted-types react-dsfr react-dsfr-asap nextjs nextjs#bundler;
      * ```
      *
      * @see https://developer.mozilla.org/fr/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
      * @see {@link DEFAULT_TRUSTED_TYPES_POLICY_NAME}
-     * @default "react-dsapitech"
+     * @default "react-dsfr"
      */
     trustedTypesPolicyName?: string;
 }) {
@@ -46,7 +46,7 @@ export function startReactDsapitech(params: {
         Link,
         useLang,
         nonce,
-        trustedTypesPolicyName = "react-dsapitech"
+        trustedTypesPolicyName = "react-dsfr"
     } = params;
 
     if (Link !== undefined) {

@@ -12,18 +12,18 @@ const { meta, getStory } = getStoryFactory({
     "description": `
 A button that opens a dialog to enable the user to select light or dark mode.  
 
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage),
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Display/Display.tsx)
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage),
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Display/Display.tsx)
 
-Optionally, you can also use \`import { useIsDark } from "@apitech/react-dsapitech"\` to manually monitor and controls 
+Optionally, you can also use \`import { useIsDark } from "@codegouvfr/react-dsfr"\` to manually monitor and controls 
 the theme state.
 
 ## Usage example 
 
 \`\`\`tsx
-import { Header } from "@apitech/react-dsapitech/Header";
-import { Footer } from "@apitech/react-dsapitech/Footer";
-import { headerFooterDisplayItem } from "@apitech/react-dsapitech/Display";
+import { Header } from "@codegouvfr/react-dsfr/Header";
+import { Footer } from "@codegouvfr/react-dsfr/Footer";
+import { headerFooterDisplayItem } from "@codegouvfr/react-dsfr/Display";
 
 function App(){
 

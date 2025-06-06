@@ -15,11 +15,11 @@ const $clientSideIsDark = createStatefulObservable<boolean>(() => {
 
     throw new Error(
         [
-            "react-dsapitech not initialized.",
+            "react-dsfr not initialized.",
             "Refer to the documentation for setup instructions",
             "If it used to work but after an update you're getting this error",
-            "it usually means that you have multiple copies of @apitech/react-dsapitech in your node_modules",
-            "@apitech/react-dsapitech is a singleton, try removing your lock file and node_module."
+            "it usually means that you have multiple copies of @codegouvfr/react-dsfr in your node_modules",
+            "@codegouvfr/react-dsfr is a singleton, try removing your lock file and node_module."
         ].join(" ")
     );
 });
@@ -81,7 +81,7 @@ export const useIsDarkClientSide: UseIsDark = () => {
             document.documentElement.setAttribute(data_fr_scheme, newColorScheme);
 
             if (data_fr_js_value !== "true") {
-                //NOTE: DSApitech not started yet.
+                //NOTE: DSFR not started yet.
                 document.documentElement.setAttribute(
                     data_fr_theme,
                     newColorScheme === "system" ? getSystemColorScheme() : newColorScheme

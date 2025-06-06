@@ -5,10 +5,10 @@ import { sectionName } from "./sectionName";
 const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { PasswordInput },
-    "description": `\`import { PasswordInput } from "@apitech/react-dsapitech/blocks/PasswordInput"\`
+    "description": `\`import { PasswordInput } from "@codegouvfr/react-dsfr/blocks/PasswordInput"\`
 
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mot-de-passe/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/blocks/PasswordInput.tsx)  `,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mot-de-passe/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/blocks/PasswordInput.tsx)  `,
     "argTypes": {
         "disabled": {
             "control": { "type": "boolean" }

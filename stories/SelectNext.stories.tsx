@@ -11,11 +11,11 @@ const { meta, getStory } = getStoryFactory<SelectProps<SelectProps.Option[]>>({
     "description": `
 \`\`\`tsx
 
-import { Select } from "@apitech/react-dsapitech/SelectNext";
+import { Select } from "@codegouvfr/react-dsfr/SelectNext";
 
 \`\`\`
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/liste-deroulante)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/SelectNext.tsx)
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/liste-deroulante)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/SelectNext.tsx)
 
 
 ## Controlled
@@ -34,7 +34,7 @@ type Value = typeof values[number]; // "foo" | "bar" | "baz";
 
 \`\`\`tsx
 import { useState } from "react";
-import { Select } from "@apitech/react-dsapitech/Select";
+import { Select } from "@codegouvfr/react-dsfr/Select";
 
 function MyComponent(){
 
@@ -72,7 +72,7 @@ function MyComponent(){
 
 \`\`\`tsx
 import { useState } from "react";
-import { Select } from "@apitech/react-dsapitech/Select";
+import { Select } from "@codegouvfr/react-dsfr/Select";
 
 function MyComponent(){
 
@@ -99,7 +99,7 @@ function MyComponent(){
 
 \`\`\`tsx
 import { useState } from "react";
-import { Select } from "@apitech/react-dsapitech/Select";
+import { Select } from "@codegouvfr/react-dsfr/Select";
 
 function MyComponent(){
 

@@ -15,9 +15,9 @@ const { meta, getStory } = getStoryFactory({
     "wrappedComponent": { Tile },
     "defaultContainerWidth": 360,
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tuile)
-- [See DSApitech demos](https://main--ds-gouv.netlify.app/example/component/tile/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Tile.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tuile)
+- [See DSFR demos](https://main--ds-gouv.netlify.app/example/component/tile/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Tile.tsx)`,
     "disabledProps": ["lang"],
     // https://storybook.js.org/docs/essentials/controls#configuration
     "argTypes": {
@@ -112,7 +112,7 @@ const { meta, getStory } = getStoryFactory({
         },
         "imageSvg": {
             "description":
-                "Set to true if the image is type of SVG [Pictogramme DSApitech](https://www.systeme-de-design.gouv.fr/fondamentaux/pictogramme/) compliant.",
+                "Set to true if the image is type of SVG [Pictogramme DSFR](https://www.systeme-de-design.gouv.fr/fondamentaux/pictogramme/) compliant.",
             "defaultValue": false,
             "control": {
                 "type": "boolean"

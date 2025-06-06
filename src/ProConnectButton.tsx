@@ -29,7 +29,7 @@ export namespace ProConnectButtonProps {
     };
 }
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-proconnectbutton> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-proconnectbutton> */
 export const ProConnectButton = memo(
     forwardRef<HTMLDivElement, ProConnectButtonProps>((props, ref) => {
         const { classes = {}, className, url: href, style, onClick, id: id_props, ...rest } = props;

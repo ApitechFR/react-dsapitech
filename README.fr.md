@@ -1,35 +1,35 @@
 <p align="center">
-    <img src="https://github.com/ApitechFR/react-dsapitech/releases/download/assets/dsapitech-react_repo-card.png">  
+    <img src="https://github.com/codegouvfr/react-dsfr/releases/download/assets/dsfr-react_repo-card.png">  
 </p>
 <p align="center">
-    🇫🇷 <i>React intégration pour le <a href="https://www.apitech.fr/">System de design d'Apitech' (alias DSApitech)</a></i> 🇫🇷 
+    🇫🇷 <i>React intégration pour le <a href="https://www.systeme-de-design.gouv.fr/">System de design du gouvernement français (alias DSFR)</a></i> 🇫🇷 
     <br>
     <br>
-    <a href="https://github.com/ApitechFR/react-dsapitech/actions">
-      <img src="https://github.com/ApitechFR/react-dsapitech/actions/workflows/ci.yaml/badge.svg">
+    <a href="https://github.com/codegouvfr/react-dsfr/actions">
+      <img src="https://github.com/codegouvfr/react-dsfr/actions/workflows/ci.yaml/badge.svg">
     </a>
-    <a href="https://www.npmjs.com/package/@apitech/react-dsapitech">
-      <img src="https://img.shields.io/npm/v/@apitech/react-dsapitech?logo=npm">
+    <a href="https://www.npmjs.com/package/@codegouvfr/react-dsfr">
+      <img src="https://img.shields.io/npm/v/@codegouvfr/react-dsfr?logo=npm">
     </a>
-    <a href="https://bundlephobia.com/package/@apitech/react-dsapitech">
-      <img src="https://img.shields.io/bundlephobia/minzip/@apitech/react-dsapitech">
+    <a href="https://bundlephobia.com/package/@codegouvfr/react-dsfr">
+      <img src="https://img.shields.io/bundlephobia/minzip/@codegouvfr/react-dsfr">
     </a>
-    <a href="https://github.com/ApitechFR/react-dsapitech/blob/main/LICENSE">
-      <img src="https://img.shields.io/npm/l/@apitech/react-dsapitech">
+    <a href="https://github.com/codegouvfr/react-dsfr/blob/main/LICENSE">
+      <img src="https://img.shields.io/npm/l/@codegouvfr/react-dsfr">
     </a>
 </p>
 <p align="center">
-  <a href="https://components.react-dsapitech.codegouv.studio">Documentation des composants</a>
+  <a href="https://components.react-dsfr.codegouv.studio">Documentation des composants</a>
   -
-  <a href="https://react-dsapitech.codegouv.studio">guides</a>
+  <a href="https://react-dsfr.codegouv.studio">guides</a>
   -
   <a href="https://stackblitz.com/edit/nextjs-j2wba3?file=pages/index.tsx">essai immédiat</a>
 </p>
 
 > AVERTISSEMENT : Ce système de conception est uniquement destiné à être utilisé pour les sites web officiels des services publics français.  
-> Son objectif principal est de faciliter l'identification des sites gouvernementaux par les citoyens. [Voir les conditions](https://www.apitech.fr/utilisation-et-organisation/perimetre-d-application).
+> Son objectif principal est de faciliter l'identification des sites gouvernementaux par les citoyens. [Voir les conditions](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/perimetre-d-application).
 
-Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitech](https://github.com/ApitechFR/dsapitech), l'implémentation en JS/CSS vanilla du DSApitech.
+Ce module est une boîte à outils avancée qui tire parti de [@gouvfr/dsfr](https://github.com/GouvernementFR/dsfr), l'implémentation en JS/CSS vanilla du DSFR.
 
 <a href="https://youtu.be/5q88JgXUAY4">
   <img width="1712" alt="image" src="https://user-images.githubusercontent.com/6702424/224423044-c1823249-eab6-4844-af43-d059c01416af.png">
@@ -38,24 +38,24 @@ Ce module est une boîte à outils avancée qui tire parti de [@apitech/dsapitec
 > Bien que ce module soit écrit en TypeScript, l'utilisation de TypeScript dans votre application est optionnelle (mais recommandée car elle apporte des avantages exceptionnels à la fois pour vous et votre base de code).
 
 -   [x] API entièrement TypeSafe, bien documentée.
--   [x] Toujours à jour avec les dernières évolutions du DSApitech.
-        Code et Types générés à partir de [`@apitech/dsapitech`](https://www.npmjs.com/package/@apitech/dsapitech)`/dist/dsapitech.css`.
--   [x] Exactement le même aspect et ressenti qu'avec [@apitech/dsapitech](https://www.npmjs.com/package/@apitech/dsapitech).
--   [x] Pas de [flash blanc lors du rechargement dans la configuration SSR](https://github.com/ApitechFR/@apitech/react-dsapitech/issues/2#issuecomment-1257263480).
+-   [x] Toujours à jour avec les dernières évolutions du DSFR.
+        Code et Types générés à partir de [`@gouvfr/dsfr`](https://www.npmjs.com/package/@gouvfr/dsfr)`/dist/dsfr.css`.
+-   [x] Exactement le même aspect et ressenti qu'avec [@gouvfr/dsfr](https://www.npmjs.com/package/@gouvfr/dsfr).
+-   [x] Pas de [flash blanc lors du rechargement dans la configuration SSR](https://github.com/codegouvfr/@codegouvfr/react-dsfr/issues/2#issuecomment-1257263480).
 -   [x] La plupart des composants sont prêts pour les composants serveur. Les autres sont étiquetés avec `"use client";`
--   [x] [Intégration parfaite avec tous les principaux frameworks React : Next.js (PagesDir et AppDir), Create React App, Vite](https://react-dsapitech.codegouv.studio/).
--   [x] (Presque) Tous [les composants](https://www.apitech.fr/elements-d-interface) sont [implémentés](https://components.react-dsapitech.codegouv.studio/)
+-   [x] [Intégration parfaite avec tous les principaux frameworks React : Next.js (PagesDir et AppDir), Create React App, Vite](https://react-dsfr.codegouv.studio/).
+-   [x] (Presque) Tous [les composants](https://www.systeme-de-design.gouv.fr/elements-d-interface) sont [implémentés](https://components.react-dsfr.codegouv.studio/)
 -   [x] Trois distributions modulables, choisissez les composants que vous importez. (Ce n'est pas tout dans un gros bundle .js)
 -   [x] Intégration optionnelle avec [MUI](https://mui.com/). Si vous utilisez des composants MUI, ils seront
-        automatiquement adaptés pour ressembler aux [composants DSApitech](https://www.apitech.fr/elements-d-interface). Voir [documentation](https://react-dsapitech.codegouv.studio/mui-integration).
--   [x] Permet le CSS in JS. [Documentation](https://react-dsapitech.codegouv.studio/css-in-js)
+        automatiquement adaptés pour ressembler aux [composants DSFR](https://www.systeme-de-design.gouv.fr/elements-d-interface). Voir [documentation](https://react-dsfr.codegouv.studio/mui-integration).
+-   [x] Permet le CSS in JS. [Documentation](https://react-dsfr.codegouv.studio/css-in-js)
 -   [x] i18n en option, les textes intégrés peuvent être affichés en plusieurs langues et l'utilisateur peut fournir des traductions supplémentaires.
--   [x] [Support des bibliothèques de routage](https://react-dsapitech.codegouv.studio/routing) comme react-router.
+-   [x] [Support des bibliothèques de routage](https://react-dsfr.codegouv.studio/routing) comme react-router.
 
-> 💡 Besoin de pages de connexion et d'inscription prêtes à l'emploi et conformes au DSApitech ? Consultez [keycloak-theme-dsapitech](https://github.com/ApitechFR/keycloak-theme-dsapitech).
+> 💡 Besoin de pages de connexion et d'inscription prêtes à l'emploi et conformes au DSFR ? Consultez [keycloak-theme-dsfr](https://github.com/codegouvfr/keycloak-theme-dsfr).
 
 <p align="center">
-  <a href="https://react-dsapitech.codegouv.studio/">🚀 Commencez ici 🚀 </a>
+  <a href="https://react-dsfr.codegouv.studio/">🚀 Commencez ici 🚀 </a>
 </p>
 
 # Gouvernance
@@ -72,8 +72,8 @@ Ce projet est co-maintenu par des fonctionnaires de diverses administrations fra
 ## Développement
 
 ```bash
-git clone https://github.com/ApitechFR/react-dsapitech
-cd react-dsapitech
+git clone https://github.com/codegouvfr/react-dsfr
+cd react-dsfr
 yarn
 
 # Démarrer storybook
@@ -93,7 +93,7 @@ npx vitest -t "Resolution of CSS variables"
 
 ### Vous voulez contribuer ?
 
-Merci ! Voir [le guide de contribution](https://github.com/ApitechFR/react-dsapitech/blob/main/CONTRIBUTING.md).
+Merci ! Voir [le guide de contribution](https://github.com/codegouvfr/react-dsfr/blob/main/CONTRIBUTING.md).
 
 ### Comment publier une nouvelle version sur NPM, comment sortir une version bêta
 
@@ -102,7 +102,7 @@ documentation de ce starter pour comprendre le cycle de vie de ce dépôt.
 
 ## Cas d'utilisation
 
-Quelques projets qui utilisent `@apitech/react-dsapitech`.
+Quelques projets qui utilisent `@codegouvfr/react-dsfr`.
 
 -   https://adresse.data.gouv.fr
 -   https://cartes.gouv.fr
@@ -115,7 +115,7 @@ Quelques projets qui utilisent `@apitech/react-dsapitech`.
 -   https://github.com/EIG6-Geocommuns/geocommuns-core
 -   https://github.com/EIG6-Geocommuns/lidarviz-front
 -   https://github.com/inclusion-numerique/mediature
--   https://github.com/InseeFr/Lunatic-DSApitech
+-   https://github.com/InseeFr/Lunatic-DSFR
 -   https://github.com/SocialGouv/bpco-site
 -   https://immersion-facile.beta.gouv.fr
 -   https://maisondelautisme.gouv.fr/

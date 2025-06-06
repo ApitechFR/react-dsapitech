@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import * as css from "css";
 
-export function patchCssForMui(params: { rawDsapitechCssCode: string }) {
-    const { rawDsapitechCssCode } = params;
+export function patchCssForMui(params: { rawDsfrCssCode: string }) {
+    const { rawDsfrCssCode } = params;
 
-    const parsedCss = css.parse(rawDsapitechCssCode);
+    const parsedCss = css.parse(rawDsfrCssCode);
 
     (function callee(rules: any[], media: string): any[] {
         return [
@@ -33,7 +33,7 @@ export function patchCssForMui(params: { rawDsapitechCssCode: string }) {
     );
 
     return {
-        "rawDsapitechCssCodePatchedForMui": css.stringify(parsedCss, { "compress": false }),
-        "rawDsapitechCssCodePatchedForMuiMinified": css.stringify(parsedCss, { "compress": true })
+        "rawDsfrCssCodePatchedForMui": css.stringify(parsedCss, { "compress": false }),
+        "rawDsfrCssCodePatchedForMuiMinified": css.stringify(parsedCss, { "compress": true })
     };
 }

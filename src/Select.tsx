@@ -28,7 +28,7 @@ export type SelectProps = {
 };
 
 /**
- * @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-select>
+ * @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-select>
  * */
 export const Select = memo(
     forwardRef<HTMLDivElement, SelectProps>((props, ref) => {

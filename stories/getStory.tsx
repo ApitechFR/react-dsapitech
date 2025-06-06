@@ -155,7 +155,7 @@ export function getStoryFactory<Props extends Record<string, any>>(params: {
                                 : [
                                       `\`\`\`tsx  `,
                                       `  `,
-                                      `import { ${componentName} } from "@apitech/react-dsapitech/${pathComponent}";`,
+                                      `import { ${componentName} } from "@codegouvfr/react-dsfr/${pathComponent}";`,
                                       ` `,
                                       `\`\`\``
                                   ]),

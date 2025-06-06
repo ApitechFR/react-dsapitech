@@ -87,7 +87,7 @@ export namespace NoticeProps {
     export type RiskyAlertSeverity = "witness" | "kidnapping" | "attack" | "cyberattack";
 }
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-notice> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-notice> */
 export const Notice = memo(
     forwardRef<HTMLDivElement, NoticeProps>((props, ref) => {
         const {

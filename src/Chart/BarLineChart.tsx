@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { symToStr } from "tsafe/symToStr";
-import "@apitech/dsapitech-chart/BarLineChart/barline-chart.common";
-import "@apitech/dsapitech-chart/BarLineChart/barline-chart.css";
+import "@gouvfr/dsfr-chart/BarLineChart/barline-chart.common";
+import "@gouvfr/dsfr-chart/BarLineChart/barline-chart.css";
 import {
     chartWrapper,
     IntrinsicGraphType,
@@ -16,7 +16,7 @@ import {
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            // https://github.com/GouvernementFR/dsapitech-chart/blob/v1.0.0/src/components/BarLineChart.vue#L75
+            // https://github.com/GouvernementFR/dsfr-chart/blob/v1.0.0/src/components/BarLineChart.vue#L75
             "bar-line-chart": {
                 ybar: string;
             } & IntrinsicGraphType &
@@ -36,7 +36,7 @@ export type BarLineChartBaseProps = {
 
 export type BarLineChartProps = BarLineChartBaseProps & BaseChartProps;
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/charts-barlinechart> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/charts-barlinechart> */
 export const BarLineChart = chartWrapper((props: BarLineChartBaseProps) => {
     return <bar-line-chart {...stringifyObjectValue(props)} />;
 }, "bar-line-chart");

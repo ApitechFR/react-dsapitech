@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory<NoticeProps>({
     sectionName,
     "wrappedComponent": { Notice },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bandeau-d-information-importante)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Notice.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bandeau-d-information-importante)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Notice.tsx)`,
     "argTypes": {
         "title": {
             "description":

@@ -6,8 +6,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Stepper },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/indicateur-d-etapes)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Stepper.tsx)`
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/indicateur-d-etapes)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Stepper.tsx)`
 });
 
 export default meta;

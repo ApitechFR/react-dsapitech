@@ -191,7 +191,7 @@ addModalTranslations({
 
 export { addModalTranslations };
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-modal> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-modal> */
 export function createModal(params: { isOpenedByDefault: boolean; id: string }): {
     buttonProps: {
         /** Only for analytics, feel free to overwrite */
@@ -242,15 +242,15 @@ export function createModal(params: { isOpenedByDefault: boolean; id: string }):
     function open() {
         const modalElement = document.getElementById(id);
 
-        // @ts-expect-error: Property 'dsapitech' does not exist on type 'Window & typeof globalThis'.ts(2339)
-        window.dsapitech(modalElement).modal.disclose();
+        // @ts-expect-error: Property 'dsfr' does not exist on type 'Window & typeof globalThis'.ts(2339)
+        window.dsfr(modalElement).modal.disclose();
     }
 
     function close() {
         const modalElement = document.getElementById(id);
 
-        // @ts-expect-error: Property 'dsapitech' does not exist on type 'Window & typeof globalThis'.ts(2339)
-        window.dsapitech(modalElement).modal.conceal();
+        // @ts-expect-error: Property 'dsfr' does not exist on type 'Window & typeof globalThis'.ts(2339)
+        window.dsfr(modalElement).modal.conceal();
     }
 
     return {

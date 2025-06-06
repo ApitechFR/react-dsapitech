@@ -151,7 +151,7 @@ export namespace FooterProps {
     }
 }
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-footer> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-footer> */
 export const Footer = memo(
     forwardRef<HTMLDivElement, FooterProps>((props, ref) => {
         const {
@@ -222,7 +222,7 @@ export const Footer = memo(
                             <div
                                 className={fr.cx(
                                     "fr-grid-row",
-                                    // "fr-grid-row--start", // why is this class used in dsapitech doc?
+                                    // "fr-grid-row--start", // why is this class used in dsfr doc?
                                     "fr-grid-row--gutters"
                                 )}
                             >

@@ -12,17 +12,17 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Header },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/en-tete)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Header/Header.tsx)  
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/en-tete)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Header/Header.tsx)  
   
-See also [\\<MainNavigation \\/\\>](https://components.react-dsapitech.codegouv.studio/?path=/docs/components-mainnavigation)  
+See also [\\<MainNavigation \\/\\>](https://components.react-dsfr.codegouv.studio/?path=/docs/components-mainnavigation)  
   
 *NOTE*: On small screens (mobile), you can click on the burger menu to open the menu modal.
 You can watch if the menu modal is open or not with the \`useIsHeaderMenuModalOpen\` hook.  
 
 \`\`\`tsx  
 
-import { useIsHeaderMenuModalOpen } from "@apitech/react-dsapitech/Header/useIsHeaderMenuModalOpen";
+import { useIsHeaderMenuModalOpen } from "@codegouvfr/react-dsfr/Header/useIsHeaderMenuModalOpen";
 
 const isOpen = useIsHeaderMenuModalOpen();
 
@@ -45,7 +45,7 @@ const isOpen = useIsHeaderMenuModalOpen();
         },
         "quickAccessItems": {
             "description":
-                "To integrate the Dark mode switch head over to the documentation of the [Display component](https://components.react-dsapitech.codegouv.studio/?path=/docs/components-display)"
+                "To integrate the Dark mode switch head over to the documentation of the [Display component](https://components.react-dsfr.codegouv.studio/?path=/docs/components-display)"
         },
         "onSearchButtonClick": {
             "description":
@@ -207,14 +207,14 @@ export const HeaderWithQuickAccessItems = getStory(
 
 \`\`\`tsx  
 
-import { Header as DsapitechHeader } from "@apitech/react-dsapitech/Header";
+import { Header as DsfrHeader } from "@codegouvfr/react-dsfr/Header";
 import { LanguageSelect } from "./LanguageSelect";
 import { AuthButtons } from "./AuthButtons";
 
 export function Header() {
 
     return (
-        <DsapitechHeader
+        <DsfrHeader
             quickAccessItems={[
                 {
                     iconId: "fr-icon-add-circle-line",
@@ -252,7 +252,7 @@ You can see this component live [here](https://vite-insee-starter.demo-domain.ov
 
 \`\`\`tsx  
 
-import { HeaderQuickAccessItem } from "@apitech/react-dsapitech/Header";
+import { HeaderQuickAccessItem } from "@codegouvfr/react-dsfr/Header";
 import { declareComponentKeys, useTranslation } from "i18n"; // i18nifty
 import { useOidc } from "oidc"; // oidc-spa
 
@@ -383,7 +383,7 @@ callback that will be called when the user click on the search button or press e
 
 You can also have a use the \`clearSearchInputOnSearch\` and \`allowEmptySearch\` props to control the behavior of the search input.  
 
-> NOTE: There is a bug in the DSApitech that prevent te input to be cleared when the user press the escape key.  
+> NOTE: There is a bug in the DSFR that prevent te input to be cleared when the user press the escape key.  
 We hope it will be fixed soon.
 
 \`\`\`tsx
@@ -494,7 +494,7 @@ function Root(){
                             type={type}
                             value={search}
                             // Note: The default behavior for an input of type 'text' is to clear the input value when the escape key is pressed.
-                            // However, due to a bug in @apitech/dsapitech the escape key event is not propagated to the input element.
+                            // However, due to a bug in @gouvfr/dsfr the escape key event is not propagated to the input element.
                             // As a result this onChange is not called when the escape key is pressed.
                             onChange={event => onSearchChange(event.currentTarget.value)}
                             // Same goes for the keydown event so this is useless but we hope the bug will be fixed soon.
@@ -520,15 +520,15 @@ function Root(){
 If you want to feature a modern search experience with realtime hinting you can omit providing a \`onSearchButtonClick\` callback and instead
 make sure you provide an overlay with the search results in the the \`renderSearchInput\` function.  
 
-As, to this day, the DSApitech do not provide any component to help you with that, you are on your own for implementing the overlay.  
+As, to this day, the DSFR do not provide any component to help you with that, you are on your own for implementing the overlay.  
 You can achieve great result by using [MUI's autocomplete](https://mui.com/material-ui/react-autocomplete/) component.  
 [Video demo](https://youtu.be/AT3CvmY_Y7M?t=64).  
-If you go with MUI make sure to use the [\`<MuiDsapitechProvider />\`](https://react-dsapitech.codegouv.studio/mui).  
+If you go with MUI make sure to use the [\`<MuiDsfrProvider />\`](https://react-dsfr.codegouv.studio/mui).  
 
 \`\`\`tsx
 
 import Autocomplete from "@mui/material/Autocomplete";
-import { cx } from "@apitech/react-dsapitech/tools/cx";
+import { cx } from "@codegouvfr/react-dsfr/tools/cx";
 
 type MySearchInputProps = {
     className?: string;
@@ -842,7 +842,7 @@ export const NavigationAsCustomNode = getStory(
 
 \`\`\`tsx
         
-import { MainNavigation } from "@apitech/react-dsapitech/MainNavigation";  
+import { MainNavigation } from "@codegouvfr/react-dsfr/MainNavigation";  
         
 \`\`\`
 

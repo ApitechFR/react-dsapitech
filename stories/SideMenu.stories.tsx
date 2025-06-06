@@ -7,9 +7,9 @@ const { meta, getStory } = getStoryFactory({
     "wrappedComponent": { SideMenu },
     "defaultContainerWidth": 300,
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/menu-lateral)
-- [See DSApitech demos](https://main--ds-gouv.netlify.app/example/component/sidemenu/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/SideMenu.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/menu-lateral)
+- [See DSFR demos](https://main--ds-gouv.netlify.app/example/component/sidemenu/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/SideMenu.tsx)`,
     "disabledProps": ["lang"],
     "argTypes": {
         "title": {

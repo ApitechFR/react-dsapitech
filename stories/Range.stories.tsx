@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     wrappedComponent: { Range },
     description: `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/curseur-range)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Range.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/curseur-range)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Range.tsx)`,
     argTypes: {
         disabled: {
             control: { type: "boolean" }

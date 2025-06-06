@@ -5,7 +5,7 @@ import type { ColorDecisionAndCorrespondingOption } from "../../scripts/build/cs
 import { fr } from "../../dist/fr";
 import { createUseDebounce } from "powerhooks/useDebounce";
 import { Fzf } from "fzf";
-import { MuiDsapitechThemeProvider } from "../../dist/mui";
+import { MuiDsfrThemeProvider } from "../../dist/mui";
 import { Search } from "./Search";
 import { useConst } from "powerhooks/useConst";
 import { Evt } from "evt";
@@ -79,7 +79,7 @@ export function ColorHelper() {
     }, [search, context, color, usage]);
 
     return (
-        <MuiDsapitechThemeProvider>
+        <MuiDsfrThemeProvider>
             <div>
                 <CallOut
                     className={css({ "marginBottom": 0 })}
@@ -90,10 +90,10 @@ export function ColorHelper() {
                         "children": "Start searching"
                     }}
                 >
-                    This tool help you find the perfect DSApitech color decision for your usecase.
+                    This tool help you find the perfect DSFR color decision for your usecase.
                     <br />
                     <br />
-                    Use se search filters to the DSApitech compliant color decision that best fit your
+                    Use se search filters to the DSFR compliant color decision that best fit your
                     needs.
                 </CallOut>
                 <Search
@@ -134,7 +134,7 @@ export function ColorHelper() {
                 )}
                     */}
             </div>
-        </MuiDsapitechThemeProvider>
+        </MuiDsfrThemeProvider>
     );
 }
 

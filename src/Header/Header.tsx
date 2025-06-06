@@ -117,7 +117,7 @@ export namespace HeaderProps {
 
 export const headerMenuModalIdPrefix = "header-menu-modal";
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-header> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-header> */
 export const Header = memo(
     forwardRef<HTMLDivElement, HeaderProps>((props, ref) => {
         const {

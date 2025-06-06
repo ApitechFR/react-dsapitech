@@ -112,7 +112,7 @@ export namespace FollowProps {
     } & (NewsletterWithForm | NewsletterWithoutForm);
 
     /**
-     * From DSApitech `$follow-icons` + `copy` and `mail`
+     * From DSFR `$follow-icons` + `copy` and `mail`
      */
     export type SocialType =
         | "copy"
@@ -345,7 +345,7 @@ const FollowSocial = (
     );
 };
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-follow> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-follow> */
 export const Follow = memo(
     forwardRef<HTMLDivElement, FollowProps>((props, ref) => {
         const { id: props_id, className, classes = {}, social, style, newsletter, ...rest } = props;

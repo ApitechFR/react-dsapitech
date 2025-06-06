@@ -6,9 +6,9 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Pagination },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/pagination)
-- [See DSApitech demos](https://main--ds-gouv.netlify.app/example/component/pagination/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Pagination.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/pagination)
+- [See DSFR demos](https://main--ds-gouv.netlify.app/example/component/pagination/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Pagination.tsx)`,
     "disabledProps": ["lang"]
 });
 

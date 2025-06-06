@@ -86,7 +86,7 @@ export namespace SegmentedControlProps {
           ];
 }
 
-/** @see <https://components.react-dsapitech.codegouv.studio/?path=/docs/components-segmented-control> */
+/** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-segmented-control> */
 export const SegmentedControl = memo(
     forwardRef<HTMLFieldSetElement, SegmentedControlProps>((props, ref) => {
         const {

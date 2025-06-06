@@ -1,2 +1,2 @@
 export { createGetHtmlAttributes } from "./getHtmlAttributes";
-export { DsapitechHeadBase, type DsapitechHeadProps } from "./DsapitechHead";
+export { DsfrHeadBase, type DsfrHeadProps } from "./DsfrHead";

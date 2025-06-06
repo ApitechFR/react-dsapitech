@@ -1,5 +1,5 @@
-import { createModal } from '@apitech/react-dsapitech/Modal'
-import { useIsModalOpen } from '@apitech/react-dsapitech/Modal/useIsModalOpen'
+import { createModal } from '@codegouvfr/react-dsfr/Modal'
+import { useIsModalOpen } from '@codegouvfr/react-dsfr/Modal/useIsModalOpen'
 import { useState, useEffect, useId } from 'react'
 
 type Props = {

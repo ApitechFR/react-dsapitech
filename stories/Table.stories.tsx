@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Table },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tableau)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Table.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tableau)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Table.tsx)`,
     "disabledProps": ["lang"],
     "argTypes": {
         "caption": {

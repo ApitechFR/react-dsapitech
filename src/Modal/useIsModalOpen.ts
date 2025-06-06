@@ -33,12 +33,12 @@ export function useIsModalOpen(
                 getCurrentCallbacks()?.onDisclose?.();
             };
 
-            element.addEventListener("dsapitech.conceal", onConceal);
-            element.addEventListener("dsapitech.disclose", onDisclose);
+            element.addEventListener("dsfr.conceal", onConceal);
+            element.addEventListener("dsfr.disclose", onDisclose);
 
             const removeEventListeners = () => {
-                element.removeEventListener("dsapitech.conceal", onConceal);
-                element.removeEventListener("dsapitech.disclose", onDisclose);
+                element.removeEventListener("dsfr.conceal", onConceal);
+                element.removeEventListener("dsfr.disclose", onDisclose);
             };
 
             cleanups.push(removeEventListeners);
