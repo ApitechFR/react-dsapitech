@@ -79,6 +79,7 @@ export type FooterProps = {
      */
     linkListTitle?: ReactNode;
     domains?: string[];
+    mainLogoURL?: string;
 };
 
 export namespace FooterProps {
@@ -172,7 +173,8 @@ export const Footer = memo(
             style,
             linkList,
             linkListTitle,
-            domains = ["info.gouv.fr", "service-public.fr", "legifrance.gouv.fr", "data.gouv.fr"],
+            domains = ["apitech.fr"],
+            mainLogoURL,
             ...rest
         } = props;
 
@@ -180,7 +182,7 @@ export const Footer = memo(
 
         const rootId = id_props ?? "fr-footer";
 
-        const { brandTop, homeLinkProps } = (() => {
+        const { homeLinkProps } = (() => {
             const wrap = getBrandTopAndHomeLinkProps();
 
             const brandTop = brandTop_prop ?? wrap?.brandTop;
@@ -197,7 +199,7 @@ export const Footer = memo(
                 throw new Error(symToStr({ homeLinkProps }) + exceptionMessage);
             }
 
-            return { brandTop, homeLinkProps };
+            return { homeLinkProps };
         })();
 
         const { Link } = getLink();
@@ -277,7 +279,13 @@ export const Footer = memo(
                         >
                             {(() => {
                                 const children = (
-                                    <p className={cx(fr.cx("fr-logo"), classes.logo)}>{brandTop}</p>
+                                    <img
+                                        className="fr-footer__logo__apitech"
+                                        src={
+                                            mainLogoURL ||
+                                            "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312"
+                                        }
+                                    />
                                 );
 
                                 return operatorLogo !== undefined ? (
