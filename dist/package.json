@@ -1,6 +1,6 @@
 {
   "name": "@apitechfr/react-dsapitech",
-  "version": "1.23.7",
+  "version": "1.23.10",
   "description": "Apitech Design System React integration library",
   "private": false,
   "publishConfig": {
