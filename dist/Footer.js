@@ -50,7 +50,7 @@ export const Footer = memo(forwardRef((props, ref) => {
                     (column === null || column === void 0 ? void 0 : column.categoryName) && (React.createElement("h3", { className: fr.cx("fr-footer__top-cat") }, column === null || column === void 0 ? void 0 : column.categoryName)),
                     React.createElement("ul", { className: fr.cx("fr-footer__top-list") }, column === null || column === void 0 ? void 0 : column.links.map((linkItem, linkItemIndex) => (React.createElement("li", { key: `fr-footer__top-link-${linkItemIndex}` },
                         React.createElement(Link, Object.assign({}, linkItem === null || linkItem === void 0 ? void 0 : linkItem.linkProps, { className: fr.cx("fr-footer__top-link") }), linkItem === null || linkItem === void 0 ? void 0 : linkItem.text)))))))))))),
-        React.createElement("div", { className: fr.cx("fr-container") },
+        React.createElement("div", { className: "apitech-footer-container" },
             React.createElement("div", { className: cx(fr.cx("fr-footer__body"), classes.body) },
                 React.createElement("div", { className: cx(fr.cx("fr-footer__brand", "fr-enlarge-link"), classes.brand) },
                     (() => {

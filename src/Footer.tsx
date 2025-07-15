@@ -269,7 +269,7 @@ export const Footer = memo(
                         </div>
                     </div>
                 )}
-                <div className={fr.cx("fr-container")}>
+                <div className="apitech-footer-container">
                     <div className={cx(fr.cx("fr-footer__body"), classes.body)}>
                         <div
                             className={cx(
@@ -489,11 +489,11 @@ export const Footer = memo(
                                 ...(websiteMapLinkProps === undefined
                                     ? []
                                     : [
-                                          id<FooterProps.BottomItem>({
-                                              "text": t("website map"),
-                                              "linkProps": websiteMapLinkProps
-                                          })
-                                      ]),
+                                        id<FooterProps.BottomItem>({
+                                            "text": t("website map"),
+                                            "linkProps": websiteMapLinkProps
+                                        })
+                                    ]),
                                 id<FooterProps.BottomItem>({
                                     "text": `${t("accessibility")} : ${t(accessibility)}`,
                                     "linkProps": accessibilityLinkProps ?? ({} as any)
@@ -501,11 +501,11 @@ export const Footer = memo(
                                 ...(termsLinkProps === undefined
                                     ? []
                                     : [
-                                          id<FooterProps.BottomItem>({
-                                              "text": t("terms"),
-                                              "linkProps": termsLinkProps
-                                          })
-                                      ]),
+                                        id<FooterProps.BottomItem>({
+                                            "text": t("terms"),
+                                            "linkProps": termsLinkProps
+                                        })
+                                    ]),
                                 ...bottomItems
                             ].map((bottomItem, i) => (
                                 <li
@@ -536,9 +536,9 @@ export const Footer = memo(
                             <p>
                                 {license === undefined
                                     ? t("license mention", {
-                                          "licenseUrl":
-                                              "https://github.com/etalab/licence-ouverte/blob/master/LO.md"
-                                      })
+                                        "licenseUrl":
+                                            "https://github.com/etalab/licence-ouverte/blob/master/LO.md"
+                                    })
                                     : license}
                             </p>
                         </div>
