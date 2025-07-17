@@ -1,6 +1,6 @@
 {
     "name": "@apitechfr/react-dsapitech",
-    "version": "1.23.7",
+    "version": "1.23.11",
     "description": "Apitech Design System React integration library",
     "private": false,
     "publishConfig": {
@@ -60,7 +60,6 @@
     ],
     "homepage": "https://github.com/ApitechFR/react-dsapitech",
     "dependencies": {
-        "@apitechfr/dsapitech": "^1.13.8",
         "tsafe": "^1.8.5",
         "yargs-parser": "^21.1.1"
     },
@@ -73,6 +72,7 @@
         }
     },
     "devDependencies": {
+        "@apitechfr/dsapitech": "^1.13.6",
         "@apitechfr/dsapitech-chart": ">=1.0.0",
         "@babel/core": "^7.20.2",
         "@emotion/react": "^11.10.4",
