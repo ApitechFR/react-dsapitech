@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Badge },
     description: `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/badge)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Badge.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/badge)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Badge.tsx)`,
     "argTypes": {
         "severity": {
             "options": (() => {

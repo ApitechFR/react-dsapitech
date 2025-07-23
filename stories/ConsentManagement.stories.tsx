@@ -14,21 +14,21 @@ const { meta, getStory } = getStoryFactory({
         "consentManagement": Story
     },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/gestionnaire-de-consentement),
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/consentManagement)
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/gestionnaire-de-consentement),
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/consentManagement)
 
 \`src/consentManagement.tsx\` (This is a file you should create in your project)  
 
-Refer to [this section of the Guides](https://react-dsapitech.codegouv.studio/analytics) to see how to setup the the 
+Refer to [this section of the Guides](https://react-dsfr.codegouv.studio/analytics) to see how to setup the the 
 mandated solution for analytics in your project.  
   
-You can find a complete example setup in [the Demo repo for Next.js App Router](https://github.com/garronej/react-dsapitech-next-appdir-demo/blob/main/ui/consentManagement.tsx) 
+You can find a complete example setup in [the Demo repo for Next.js App Router](https://github.com/garronej/react-dsfr-next-appdir-demo/blob/main/ui/consentManagement.tsx) 
 which is live [here](https://stackblitz.com/edit/nextjs-j2wba3?file=pages/index.tsx). You should be able to easily adapt it to other meta frameworks (Vite, Next Pages Router, CRA).
   
 \`\`\`tsx
 "use client";
 
-import { createConsentManagement } from "@apitech/react-dsapitech/consentManagement";
+import { createConsentManagement } from "@codegouvfr/react-dsfr/consentManagement";
 
 export const { 
     ConsentBannerAndConsentManagement, 
@@ -141,7 +141,7 @@ function RootLayout(){
             <head></head>
             <body>
                 {/* This component must be the first thing in the body of your app.
-                If you're in Next App Router it should be wrapped within <DsapitechProvider> */}
+                If you're in Next App Router it should be wrapped within <DsfrProvider> */}
                 <ConsentBannerAndConsentManagement /> 
                 {/* ... */}
 				<Footer
@@ -163,7 +163,7 @@ Placeholders are also provided to help you display content conditionally based o
 
 \`\`\`tsx
 import { useConsent } from "./consentManagement";
-import { Placeholder } from "@apitech/react-dsapitech/consentManagement/Placeholder";
+import { Placeholder } from "@codegouvfr/react-dsfr/consentManagement/Placeholder";
 
 export function MyComponent(){
 
@@ -188,7 +188,7 @@ You can also register a \`consentCallback\` in a component.
 
 \`\`\`tsx
 import { useConsent } from "./consentManagement";
-import { Placeholder } from "@apitech/react-dsapitech/consentManagement/Placeholder";
+import { Placeholder } from "@codegouvfr/react-dsfr/consentManagement/Placeholder";
 
 export function MyComponent(){
 

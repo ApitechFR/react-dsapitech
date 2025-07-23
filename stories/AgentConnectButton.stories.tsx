@@ -7,7 +7,7 @@ const { meta, getStory } = getStoryFactory({
     "wrappedComponent": { AgentConnectButton },
     "description": `
 - [See AgentConnect documentation](https://github.com/france-connect/Documentation-AgentConnect/blob/main/doc_fs/implementation_fca/bouton_fca.md)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/AgentConnectButton.tsx)`
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/AgentConnectButton.tsx)`
 });
 
 export default meta;

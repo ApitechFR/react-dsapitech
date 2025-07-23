@@ -2,8 +2,8 @@ import { createComponentI18nApi } from "../../src/lib/i18n";
 import { assert } from "tsafe/assert";
 import type { Equals } from "tsafe";
 
-const { useTranslation, addSomeDsapitechComponentTranslations } = createComponentI18nApi({
-    "componentName": "SomeDsapitechComponent",
+const { useTranslation, addSomeDsfrComponentTranslations } = createComponentI18nApi({
+    "componentName": "SomeDsfrComponent",
     "frMessages": {
         /* spell-checker: disable */
 
@@ -14,7 +14,7 @@ const { useTranslation, addSomeDsapitechComponentTranslations } = createComponen
     }
 });
 
-addSomeDsapitechComponentTranslations({
+addSomeDsfrComponentTranslations({
     "lang": "en",
     "messages": {
         "do something": ({ what }) => {

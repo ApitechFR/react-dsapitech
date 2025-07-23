@@ -8,13 +8,13 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Alert },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/alerte)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Alert.tsx)
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/alerte)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Alert.tsx)
 
 ## Uncontrolled mode  
 
 \`\`\`tsx
-import { Alert } from "@apitech/react-dsapitech/Alert";
+import { Alert } from "@codegouvfr/react-dsfr/Alert";
 
 <Alert
     severity="success"
@@ -28,7 +28,7 @@ import { Alert } from "@apitech/react-dsapitech/Alert";
 ## Controlled mode
 
 \`\`\`tsx
-import { Alert } from "@apitech/react-dsapitech/Alert";
+import { Alert } from "@codegouvfr/react-dsfr/Alert";
 import { useState } from "react";
 
 const [ isClosed, setIsClosed ] = useState(false);

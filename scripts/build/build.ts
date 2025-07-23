@@ -5,7 +5,7 @@ import * as fs from "fs";
 import { getPatchedRawCssCodeForCompatWithRemixIcon, collectIcons } from "./icons";
 import { cssToTs } from "./cssToTs";
 import {
-    PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSApitech,
+    PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSFR,
     PATH_OF_ICONS_JSON
 } from "../../src/bin/only-include-used-icons";
 import * as child_process from "child_process";
@@ -19,72 +19,72 @@ import yargsParser from "yargs-parser";
 
     const projectRootDirPath = getProjectRoot();
 
-    const dsapitechDirPath = pathJoin(projectRootDirPath, "dsapitech");
+    const dsfrDirPath = pathJoin(projectRootDirPath, "dsfr");
 
-    if (fs.existsSync(dsapitechDirPath)) {
-        fs.rmSync(dsapitechDirPath, { "recursive": true, "force": true });
+    if (fs.existsSync(dsfrDirPath)) {
+        fs.rmSync(dsfrDirPath, { "recursive": true, "force": true });
     }
 
     const nodeModuleDirPath = pathJoin(projectRootDirPath, "node_modules");
 
-    fs.cpSync(pathJoin(nodeModuleDirPath, "@apitech", "dsapitech", "dist"), dsapitechDirPath, {
+    fs.cpSync(pathJoin(nodeModuleDirPath, "@apitechfr", "dsapitech", "dist"), dsfrDirPath, {
         "recursive": true
     });
 
     {
-        const filePath = pathJoin(dsapitechDirPath, "dsapitech.css");
+        const filePath = pathJoin(dsfrDirPath, "dsfr.css");
 
-        const dsapitechCssContent = fs.readFileSync(filePath).toString("utf8");
+        const dsfrCssContent = fs.readFileSync(filePath).toString("utf8");
 
-        const dsapitechCssContent_patched = dsapitechCssContent.replace('@charset "UTF-8";', "");
+        const dsfrCssContent_patched = dsfrCssContent.replace('@charset "UTF-8";', "");
 
-        fs.writeFileSync(filePath, Buffer.from(dsapitechCssContent_patched, "utf8"));
+        fs.writeFileSync(filePath, Buffer.from(dsfrCssContent_patched, "utf8"));
     }
 
     fs.cpSync(
         pathJoin(__dirname, "marianne-index.css"),
-        pathJoin(dsapitechDirPath, "fonts", "index.css")
+        pathJoin(dsfrDirPath, "fonts", "index.css")
     );
 
-    const rawDsapitechCssCode = fs.readFileSync(pathJoin(dsapitechDirPath, "dsapitech.css")).toString("utf8");
+    const rawDsfrCssCode = fs.readFileSync(pathJoin(dsfrDirPath, "dsfr.css")).toString("utf8");
 
     fs.writeFileSync(
         pathJoin(
-            dsapitechDirPath,
-            PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSApitech
+            dsfrDirPath,
+            PATH_OF_PATCHED_RAW_CSS_CODE_FOR_COMPAT_WITH_REMIXICON_RELATIVE_TO_DSFR
         ),
         Buffer.from(
             getPatchedRawCssCodeForCompatWithRemixIcon({
-                "rawCssCode": rawDsapitechCssCode
+                "rawCssCode": rawDsfrCssCode
             }),
             "utf8"
         )
     );
 
     {
-        const { rawDsapitechCssCodePatchedForMui, rawDsapitechCssCodePatchedForMuiMinified } = patchCssForMui(
-            { rawDsapitechCssCode }
+        const { rawDsfrCssCodePatchedForMui, rawDsfrCssCodePatchedForMuiMinified } = patchCssForMui(
+            { rawDsfrCssCode }
         );
 
         (
             [
-                [rawDsapitechCssCodePatchedForMui, ".css"],
-                [rawDsapitechCssCodePatchedForMuiMinified, ".min.css"]
+                [rawDsfrCssCodePatchedForMui, ".css"],
+                [rawDsfrCssCodePatchedForMuiMinified, ".min.css"]
             ] as const
         ).forEach(([rawCssCode, ext]) =>
-            fs.writeFileSync(pathJoin(dsapitechDirPath, `dsapitech${ext}`), Buffer.from(rawCssCode, "utf8"))
+            fs.writeFileSync(pathJoin(dsfrDirPath, `dsfr${ext}`), Buffer.from(rawCssCode, "utf8"))
         );
     }
 
     const icons = await collectIcons({
         "remixiconDirPath": pathJoin(nodeModuleDirPath, "remixicon"),
         "iconsCssRawCode": fs
-            .readFileSync(pathJoin(dsapitechDirPath, "utility", "icons", "icons.css"))
+            .readFileSync(pathJoin(dsfrDirPath, "utility", "icons", "icons.css"))
             .toString("utf8")
     });
 
     fs.writeFileSync(
-        pathJoin(dsapitechDirPath, PATH_OF_ICONS_JSON),
+        pathJoin(dsfrDirPath, PATH_OF_ICONS_JSON),
         Buffer.from(JSON.stringify(icons, null, 2), "utf8")
     );
 
@@ -97,7 +97,7 @@ import yargsParser from "yargs-parser";
     cssToTs({
         icons,
         "generatedDirPath": pathJoin(projectRootDirPath, "src", "fr", "generatedFromCss"),
-        rawDsapitechCssCode
+        rawDsfrCssCode
     });
 
     await tsc({
@@ -107,13 +107,13 @@ import yargsParser from "yargs-parser";
 
     fs.cpSync(pathJoin(__dirname, "main.css"), pathJoin(distDirPath, "main.css"));
 
-    fs.cpSync(pathJoin(dsapitechDirPath, "favicon"), pathJoin(distDirPath, "favicon"), {
+    fs.cpSync(pathJoin(dsfrDirPath, "favicon"), pathJoin(distDirPath, "favicon"), {
         "recursive": true
     });
 
     Object.entries<string>(
         JSON.parse(fs.readFileSync(pathJoin(getProjectRoot(), "package.json")).toString("utf8"))[
-            "bin"
+        "bin"
         ]
     ).forEach(([, scriptPath]) =>
         child_process.execSync(`chmod +x ${scriptPath}`, {
@@ -174,8 +174,8 @@ import yargsParser from "yargs-parser";
             );
         }
 
-        fs.cpSync(dsapitechDirPath, pathJoin(distDirPath, "dsapitech"), { "recursive": true });
-        fs.rmSync(dsapitechDirPath, { "recursive": true });
+        fs.cpSync(dsfrDirPath, pathJoin(distDirPath, "dsfr"), { "recursive": true });
+        fs.rmSync(dsfrDirPath, { "recursive": true });
         fs.cpSync(pathJoin(projectRootDirPath, "src"), pathJoin(distDirPath, "src"), {
             "recursive": true
         });

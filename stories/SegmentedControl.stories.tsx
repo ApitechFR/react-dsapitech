@@ -6,8 +6,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     wrappedComponent: { SegmentedControl },
     description: `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/controle-segmente/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/SegmentedControl.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/controle-segmente/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/SegmentedControl.tsx)`,
     argTypes: {
         small: {
             control: { type: "boolean" }

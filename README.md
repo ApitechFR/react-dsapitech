@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://avatars.githubusercontent.com/u/24912019?s=48&v=4">  
+    <img src="https://github.com/codegouvfr/react-dsfr/releases/download/assets/dsfr-react_repo-card.png">  
 </p>
 <p align="center">
     <a href="https://www.apitech.fr/">Apitech</a> Design System <i>React toolkit</i>

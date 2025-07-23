@@ -1,5 +1,5 @@
 "use client";
-import { FooterBottomItem } from "@apitech/react-dsapitech/Footer";
+import { FooterBottomItem } from "@codegouvfr/react-dsfr/Footer";
 
 export function ClientFooterItem() {
     return (

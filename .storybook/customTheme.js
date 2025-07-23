@@ -1,8 +1,8 @@
 import { create } from "@storybook/theming";
 
 const brandImage= "logo.png";
-const brandTitle= "@apitech/react-dsapitech";
-const brandUrl= "https://github.com/ApitechFR/react-dsapitech";
+const brandTitle= "@codegouvfr/react-dsfr";
+const brandUrl= "https://github.com/codegouvfr/react-dsfr";
 const fontBase= '"Marianne", arial, sans-serif';
 const fontCode= "monospace";
 

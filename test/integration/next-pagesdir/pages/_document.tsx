@@ -1,8 +1,8 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import type { DocumentProps } from "next/document";
-import { dsapitechDocumentApi, augmentDocumentWithEmotionCache } from "./_app";
+import { dsfrDocumentApi, augmentDocumentWithEmotionCache } from "./_app";
 
-const { augmentDocumentForDsapitech, getColorSchemeHtmlAttributes } = dsapitechDocumentApi;
+const { augmentDocumentForDsfr, getColorSchemeHtmlAttributes } = dsfrDocumentApi;
 
 export default function Document(props: DocumentProps) {
     return (
@@ -16,6 +16,6 @@ export default function Document(props: DocumentProps) {
     );
 }
 
-augmentDocumentForDsapitech(Document);
+augmentDocumentForDsfr(Document);
 
 augmentDocumentWithEmotionCache(Document);

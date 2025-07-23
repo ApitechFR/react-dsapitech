@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Alert } from "@apitech/react-dsapitech/Alert";
-import { SideMenu } from "@apitech/react-dsapitech/SideMenu";
-import { Tabs } from "@apitech/react-dsapitech/Tabs";
-import { Table } from "@apitech/react-dsapitech/Table";
-import { fr } from "@apitech/react-dsapitech";
-import { useIsDark } from "@apitech/react-dsapitech/useIsDark";
-import { useStyles } from "tss-react/dsapitech";
+import { Alert } from "@codegouvfr/react-dsfr/Alert";
+import { SideMenu } from "@codegouvfr/react-dsfr/SideMenu";
+import { Tabs } from "@codegouvfr/react-dsfr/Tabs";
+import { Table } from "@codegouvfr/react-dsfr/Table";
+import { fr } from "@codegouvfr/react-dsfr";
+import { useIsDark } from "@codegouvfr/react-dsfr/useIsDark";
+import { useStyles } from "tss-react/dsfr";
 
 export default function App() {
     const { isDark, setIsDark } = useIsDark();

@@ -1,14 +1,14 @@
 import { NextAppDirEmotionCacheProvider } from "tss-react/next";
-import { DsapitechHead } from "@apitech/react-dsapitech/next-appdir/DsapitechHead";
-import { DsapitechProvider } from "@apitech/react-dsapitech/next-appdir/DsapitechProvider";
-import { getHtmlAttributes } from "@apitech/react-dsapitech/next-appdir/getHtmlAttributes";
-import { StartDsapitech } from "./StartDsapitech";
+import { DsfrHead } from "@codegouvfr/react-dsfr/next-appdir/DsfrHead";
+import { DsfrProvider } from "@codegouvfr/react-dsfr/next-appdir/DsfrProvider";
+import { getHtmlAttributes } from "@codegouvfr/react-dsfr/next-appdir/getHtmlAttributes";
+import { StartDsfr } from "./StartDsfr";
 import { defaultColorScheme } from "./defaultColorScheme";
-import MuiDsapitechThemeProvider from "@apitech/react-dsapitech/mui";
-import { Header } from "@apitech/react-dsapitech/Header";
-import { Footer } from "@apitech/react-dsapitech/Footer";
-import { headerFooterDisplayItem, addDisplayTranslations } from "@apitech/react-dsapitech/Display";
-import { fr } from "@apitech/react-dsapitech";
+import MuiDsfrThemeProvider from "@codegouvfr/react-dsfr/mui";
+import { Header } from "@codegouvfr/react-dsfr/Header";
+import { Footer } from "@codegouvfr/react-dsfr/Footer";
+import { headerFooterDisplayItem, addDisplayTranslations } from "@codegouvfr/react-dsfr/Display";
+import { fr } from "@codegouvfr/react-dsfr";
 import { Navigation } from "./Navigation";
 import Link from "next/link";
 import {
@@ -21,7 +21,7 @@ import { ClientHeaderQuickAccessItem } from "../ui/ClientHeaderQuickAccessItem";
 import { headers } from "next/headers";
 import { getScriptNonceFromHeader } from "next/dist/server/app-render/get-script-nonce-from-header"; // or use your own implementation
 import style from "./main.module.css";
-import { cx } from "@apitech/react-dsapitech/tools/cx";
+import { cx } from "@codegouvfr/react-dsfr/tools/cx";
 import { Follow } from "./Follow";
 
 export default function RootLayout({ children }: { children: JSX.Element }) {
@@ -38,9 +38,9 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
     return (
         <html {...getHtmlAttributes({ defaultColorScheme, lang })}>
             <head>
-                <title>Next 13 AppDir Demo DSApitech setup</title>
-                <StartDsapitech />
-                <DsapitechHead
+                <title>Next 13 AppDir Demo DSFR setup</title>
+                <StartDsfr />
+                <DsfrHead
                     Link={Link}
                     preloadFonts={[
                         //"Marianne-Light",
@@ -58,12 +58,12 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
                 />
             </head>
             <body>
-                <DsapitechProvider lang={lang}>
+                <DsfrProvider lang={lang}>
                     <ConsentBannerAndConsentManagement />
                     <NextAppDirEmotionCacheProvider
                         options={{ "key": "css", nonce, prepend: true }}
                     >
-                        <MuiDsapitechThemeProvider>
+                        <MuiDsfrThemeProvider>
                             <Header
                                 brandTop={
                                     <>
@@ -111,9 +111,9 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
                                     <ClientFooterItem key={"client-footer"} />
                                 ]}
                             />
-                        </MuiDsapitechThemeProvider>
+                        </MuiDsfrThemeProvider>
                     </NextAppDirEmotionCacheProvider>
-                </DsapitechProvider>
+                </DsfrProvider>
             </body>
         </html>
     );

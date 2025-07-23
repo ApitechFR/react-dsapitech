@@ -7,7 +7,7 @@ const { meta, getStory } = getStoryFactory({
     "wrappedComponent": { MonCompteProButton },
     "description": `
 - [See MonComptePro documentation](https://github.com/betagouv/moncomptepro#sp%C3%A9cifications-visuelles)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/MonCompteProButton.tsx)`
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/MonCompteProButton.tsx)`
 });
 
 export default meta;

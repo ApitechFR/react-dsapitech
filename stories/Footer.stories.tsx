@@ -26,8 +26,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Footer },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/pied-de-page)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Footer.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/pied-de-page)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Footer.tsx)`,
     "argTypes": {
         "accessibility": {
             "options": (() => {
@@ -54,7 +54,7 @@ const { meta, getStory } = getStoryFactory({
         },
         "bottomItems": {
             "description":
-                "To integrate the Dark mode switch head over to the documentation of the [Display component](https://components.react-dsapitech.codegouv.studio/?path=/docs/components-display)"
+                "To integrate the Dark mode switch head over to the documentation of the [Display component](https://components.react-dsfr.codegouv.studio/?path=/docs/components-display)"
         },
         "license": {
             "description":
@@ -66,13 +66,13 @@ const { meta, getStory } = getStoryFactory({
         "brandTop": {
             "control": { "type": null },
             "description": `In the example here it's \`<>INTITULE<br />OFFICIEL</>\`
-If you are using the DSApitech Header (as you should) this prop is optional, 
+If you are using the DSFR Header (as you should) this prop is optional, 
 the \`brandTop\` of the \`<Header />\` will be used.`
         },
         "homeLinkProps": {
             "control": { "type": null },
             "description": `A link to the home, when the user click on the logo he must navigate to the homepage of the website
-If you are using the DSApitech Header (as you should) this prop is optional, 
+If you are using the DSFR Header (as you should) this prop is optional, 
 the \`homeLinkProps\` of the \`<Header />\` will be used.`
         }
     }
@@ -145,7 +145,7 @@ export const WithCustomLicense = getStory({
     "license": (
         <>
             Unless stated otherwise all content of this website are under{" "}
-            <a href="https://github.com/ApitechFR/react-dsapitech/blob/main/LICENSE" target="_blank">
+            <a href="https://github.com/codegouvfr/react-dsfr/blob/main/LICENSE" target="_blank">
                 licence MIT
             </a>{" "}
         </>

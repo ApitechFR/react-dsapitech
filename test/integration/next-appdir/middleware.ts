@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
     block-all-mixed-content;
     upgrade-insecure-requests;
     require-trusted-types-for 'script';
-    trusted-types default react-dsapitech react-dsapitech-asap nextjs#bundler;
+    trusted-types default react-dsfr react-dsfr-asap nextjs#bundler;
 `;
 
     const requestHeaders = new Headers();

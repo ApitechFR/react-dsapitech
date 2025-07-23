@@ -1,6 +1,6 @@
 "use client";
 
-import { MainNavigation } from "@apitech/react-dsapitech/MainNavigation";
+import { MainNavigation } from "@codegouvfr/react-dsfr/MainNavigation";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 export function Navigation() {
@@ -24,11 +24,11 @@ export function Navigation() {
                     "isActive": segment === "mui"
                 },
                 {
-                    "text": "DSApitech Chart",
+                    "text": "DSFR Chart",
                     "linkProps": {
-                        "href": "/dsapitech-chart"
+                        "href": "/dsfr-chart"
                     },
-                    "isActive": segment === "dsapitech-chart"
+                    "isActive": segment === "dsfr-chart"
                 },
                 {
                     "text": "External link",

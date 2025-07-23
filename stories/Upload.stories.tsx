@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Upload },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/ajout-de-fichier)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Upload.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/ajout-de-fichier)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Upload.tsx)`,
     "argTypes": {
         "disabled": {
             "control": { "type": "boolean" }

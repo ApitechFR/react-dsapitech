@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "only-include-used-icons": "node node_modules/@apitech/react-dsapitech/bin/only-include-used-icons.js",
+        "only-include-used-icons": "node node_modules/@codegouvfr/react-dsfr/bin/only-include-used-icons.js",
         "predev": "yarn only-include-used-icons",
         "prebuild": "yarn only-include-used-icons"
     },
@@ -25,8 +25,8 @@
         "@mui/x-date-pickers": "^6.18.2",
         "dayjs": "^1.11.7",
         "@mui/x-data-grid": "^6.18.2",
-        "@apitech/dsapitech-chart": "^1.0.0",
-        "@apitech/react-dsapitech": "file:../../../dist"
+        "@gouvfr/dsfr-chart": "^1.0.0",
+        "@codegouvfr/react-dsfr": "file:../../../dist"
     },
     "devDependencies": {
         "@types/node": "^18.8.2",

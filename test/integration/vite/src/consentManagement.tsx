@@ -1,6 +1,6 @@
 "use client";
 
-import { createConsentManagement } from "@apitech/react-dsapitech/consentManagement";
+import { createConsentManagement } from "@codegouvfr/react-dsfr/consentManagement";
 
 export const { 
     ConsentBannerAndConsentManagement, 

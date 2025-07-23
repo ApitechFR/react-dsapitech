@@ -8,8 +8,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { CallOut },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mise-en-avant)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/CallOut.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/mise-en-avant)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/CallOut.tsx)`,
     "disabledProps": ["lang"],
     "argTypes": {
         "title": {

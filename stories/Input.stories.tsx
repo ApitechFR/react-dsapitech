@@ -10,8 +10,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { Input },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/champ-de-saisie)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Input.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/champ-de-saisie)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Input.tsx)`,
     "argTypes": {
         "disabled": {
             "control": { "type": "boolean" }

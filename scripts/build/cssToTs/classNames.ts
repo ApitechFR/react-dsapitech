@@ -39,10 +39,10 @@ export const parseClassNames = memoize((rawCssCode: string): string[] => {
 
 export function generateClassNamesTsCode(params: {
     rawCssCode: string;
-    dsapitechIconClassNames: string[];
+    dsfrIconClassNames: string[];
     remixiconClassNames: string[];
 }): string {
-    const { rawCssCode, dsapitechIconClassNames, remixiconClassNames } = params;
+    const { rawCssCode, dsfrIconClassNames, remixiconClassNames } = params;
 
     const classNames = parseClassNames(rawCssCode);
 
@@ -51,7 +51,7 @@ export function generateClassNamesTsCode(params: {
         ``,
         `export type FrCoreClassName = typeof frCoreClassNames[number];`,
         ``,
-        `export const frIconClassNames= ${JSON.stringify(dsapitechIconClassNames, null, 4)} as const;`,
+        `export const frIconClassNames= ${JSON.stringify(dsfrIconClassNames, null, 4)} as const;`,
         ``,
         `export type FrIconClassName = typeof frIconClassNames[number];`,
         ``,

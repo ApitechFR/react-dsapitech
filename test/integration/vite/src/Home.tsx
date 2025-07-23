@@ -1,16 +1,17 @@
-import { Alert } from "@apitech/react-dsapitech/Alert";
-import { Button } from "@apitech/react-dsapitech/Button";
-import { ButtonsGroup } from "@apitech/react-dsapitech/ButtonsGroup";
+import { Alert } from "@codegouvfr/react-dsfr/Alert";
+import { Button } from "@codegouvfr/react-dsfr/Button";
+import { ButtonsGroup } from "@codegouvfr/react-dsfr/ButtonsGroup";
 
-import { Input } from "@apitech/react-dsapitech/Input";
-import { Select } from "@apitech/react-dsapitech/SelectNext";
+import { Input } from "@codegouvfr/react-dsfr/Input";
+import { Select } from "@codegouvfr/react-dsfr/SelectNext";
 
-import { fr } from "@apitech/react-dsapitech";
-import { useIsDark } from "@apitech/react-dsapitech/useIsDark";
+import { fr } from "@codegouvfr/react-dsfr";
+import { useIsDark } from "@codegouvfr/react-dsfr/useIsDark";
 import { useState } from "react";
-import { Table } from "@apitech/react-dsapitech/Table";
+import { Table } from "@codegouvfr/react-dsfr/Table";
 
-import { Accordion } from "@apitech/react-dsapitech/Accordion";
+import { Accordion } from "@codegouvfr/react-dsfr/Accordion";
+import { Book, Money, Police, Sun } from '@codegouvfr/react-dsfr/picto';
 
 export function Home() {
     const { isDark, setIsDark } = useIsDark();
@@ -29,6 +30,13 @@ export function Home() {
                 <span className={fr.cx("fr-icon-ancient-gate-fill")} aria-hidden="true"></span>
                 <i className={fr.cx("fr-icon-ancient-gate-fill")} aria-hidden="true" />
             </div>
+
+            <div className={fr.cx("fr-my-4w")}>
+				<Police fontSize="large" />
+				<Book fontSize="large" />
+				<Money fontSize="large" />
+				<Sun fontSize="large" />
+			</div>
 
             <div className={fr.cx("fr-my-4w")}>
                 <Button

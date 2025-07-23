@@ -9,8 +9,8 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { "LanguageSelect": Story },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/selecteur-de-langue/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Header/LanguageSelect.tsx)  
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/selecteur-de-langue/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Header/LanguageSelect.tsx)  
   
 
 
@@ -18,12 +18,12 @@ const { meta, getStory } = getStoryFactory({
 
 \`\`\`tsx  
 
-import { Header as DsapitechHeader } from "@apitech/react-dsapitech/Header";
+import { Header as DsfrHeader } from "@codegouvfr/react-dsfr/Header";
 import { LanguageSelect } from "./LanguageSelect";
 
 export function Header() {
     return (
-        <DsapitechHeader
+        <DsfrHeader
             quickAccessItems={[
                 <LanguageSelect />
             ]}
@@ -40,7 +40,7 @@ export function Header() {
 import { 
     LanguageSelect as LanguageSelect_base, 
     addLanguageSelectTranslations 
-} from "@apitech/react-dsapitech/LanguageSelect";
+} from "@codegouvfr/react-dsfr/LanguageSelect";
 import { useLang, languages } from "i18n"; // i18nifty
 
 type Props = {

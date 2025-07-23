@@ -9,14 +9,14 @@ const { meta, getStory } = getStoryFactory({
     sectionName,
     "wrappedComponent": { RadioButtons },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton-radio)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/RadioButtons.tsx)  
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouton-radio)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/RadioButtons.tsx)  
   
 ## Controlled
 
 \`\`\`tsx
 import { useState } from "react";
-import { RadioButtons } from "@apitech/react-dsapitech/RadioButtons";
+import { RadioButtons } from "@codegouvfr/react-dsfr/RadioButtons";
 
 function MyComponent(){
 
@@ -58,7 +58,7 @@ function MyComponent(){
 
 \`\`\`tsx
 import { useState } from "react";
-import { RadioButtons } from "@apitech/react-dsapitech/RadioButtons";
+import { RadioButtons } from "@codegouvfr/react-dsfr/RadioButtons";
 
 function MyComponent(){
 

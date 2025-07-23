@@ -7,8 +7,8 @@ import { getStoryFactory } from "./getStory";
 import { assert } from "tsafe/assert";
 import type { Equals } from "tsafe";
 
-import artworkOvoidSvgUrl from "../dist/dsapitech/artwork/background/ovoid.svg";
-import artworkTechnicalErrorSvgUrl from "../dist/dsapitech/artwork/pictograms/system/technical-error.svg";
+import artworkOvoidSvgUrl from "../dist/dsfr/artwork/background/ovoid.svg";
+import artworkTechnicalErrorSvgUrl from "../dist/dsfr/artwork/pictograms/system/technical-error.svg";
 
 import { fr } from "../dist";
 
@@ -17,9 +17,9 @@ const { meta, getStory } = getStoryFactory({
     defaultContainerWidth: 360,
     "wrappedComponent": { Card },
     "description": `
-- [See DSApitech documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/carte)
-- [See DSApitech demos](https://main--ds-gouv.netlify.app/example/component/card/)
-- [See source code](https://github.com/ApitechFR/react-dsapitech/blob/main/src/Card.tsx)`,
+- [See DSFR documentation](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/carte)
+- [See DSFR demos](https://main--ds-gouv.netlify.app/example/component/card/)
+- [See source code](https://github.com/codegouvfr/react-dsfr/blob/main/src/Card.tsx)`,
     "argTypes": {
         "title": { "description": `Required.` },
         "titleAs": {

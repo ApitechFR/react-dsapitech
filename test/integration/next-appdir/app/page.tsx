@@ -1,13 +1,13 @@
 import { ClientComponent } from "#/ui/ClientComponent";
-import { Alert } from "@apitech/react-dsapitech/Alert";
-import { Range } from "@apitech/react-dsapitech/Range";
-import { SegmentedControl } from "@apitech/react-dsapitech/SegmentedControl";
-import { Tabs } from "@apitech/react-dsapitech/Tabs";
-import { Table } from "@apitech/react-dsapitech/Table";
-import { Summary } from "@apitech/react-dsapitech/Summary";
-import { Button } from "@apitech/react-dsapitech/Button";
-import { createModal } from "@apitech/react-dsapitech/Modal";
-import { SideMenu } from "@apitech/react-dsapitech/SideMenu";
+import { Alert } from "@codegouvfr/react-dsfr/Alert";
+import { Range } from "@codegouvfr/react-dsfr/Range";
+import { SegmentedControl } from "@codegouvfr/react-dsfr/SegmentedControl";
+import { Tabs } from "@codegouvfr/react-dsfr/Tabs";
+import { Table } from "@codegouvfr/react-dsfr/Table";
+import { Summary } from "@codegouvfr/react-dsfr/Summary";
+import { Button } from "@codegouvfr/react-dsfr/Button";
+import { createModal } from "@codegouvfr/react-dsfr/Modal";
+import { SideMenu } from "@codegouvfr/react-dsfr/SideMenu";
 
 const modal = createModal({
     "id": "simple-modal",

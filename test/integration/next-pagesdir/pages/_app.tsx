@@ -1,24 +1,24 @@
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import { createNextDsapitechIntegrationApi } from "@apitech/react-dsapitech/next-pagesdir";
-import { headerFooterDisplayItem } from "@apitech/react-dsapitech/Display";
-import { Header } from "@apitech/react-dsapitech/Header";
-import { Footer } from "@apitech/react-dsapitech/Footer";
+import { createNextDsfrIntegrationApi } from "@codegouvfr/react-dsfr/next-pagesdir";
+import { headerFooterDisplayItem } from "@codegouvfr/react-dsfr/Display";
+import { Header } from "@codegouvfr/react-dsfr/Header";
+import { Footer } from "@codegouvfr/react-dsfr/Footer";
 import { createEmotionSsrAdvancedApproach } from "tss-react/next/pagesDir";
-import { useStyles } from "tss-react/dsapitech";
-import { fr } from "@apitech/react-dsapitech";
+import { useStyles } from "tss-react/dsfr";
+import { fr } from "@codegouvfr/react-dsfr";
 import Link from "next/link";
 
-declare module "@apitech/react-dsapitech/next-pagesdir" {
+declare module "@codegouvfr/react-dsfr/next-pagesdir" {
     interface RegisterLink {
         Link: typeof Link;
     }
 }
 
 const {
-    withDsapitech,
-    dsapitechDocumentApi
-} = createNextDsapitechIntegrationApi({
+    withDsfr,
+    dsfrDocumentApi
+} = createNextDsfrIntegrationApi({
     "defaultColorScheme": "system",
     Link,
     "preloadFonts": [
@@ -39,7 +39,7 @@ const { augmentDocumentWithEmotionCache, withAppEmotionCache } = createEmotionSs
     "key": "css"
 });
 
-export { dsapitechDocumentApi, augmentDocumentWithEmotionCache };
+export { dsfrDocumentApi, augmentDocumentWithEmotionCache };
 
 function App({ Component, pageProps }: AppProps) {
 
@@ -124,4 +124,4 @@ function App({ Component, pageProps }: AppProps) {
     );
 }
 
-export default withAppEmotionCache(withDsapitech(App));
+export default withAppEmotionCache(withDsfr(App));

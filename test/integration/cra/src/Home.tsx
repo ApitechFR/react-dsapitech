@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Alert } from "@apitech/react-dsapitech/Alert";
-import { fr } from "@apitech/react-dsapitech";
-import { useIsDark } from "@apitech/react-dsapitech/useIsDark";
-import { SideMenu } from "@apitech/react-dsapitech/SideMenu";
-import { Table } from "@apitech/react-dsapitech/Table";
+import { Alert } from "@codegouvfr/react-dsfr/Alert";
+import { fr } from "@codegouvfr/react-dsfr";
+import { useIsDark } from "@codegouvfr/react-dsfr/useIsDark";
+import { SideMenu } from "@codegouvfr/react-dsfr/SideMenu";
+import { Table } from "@codegouvfr/react-dsfr/Table";
 import { routes } from "./router";
-import { Button } from "@apitech/react-dsapitech/Button";
+import { Button } from "@codegouvfr/react-dsfr/Button";
 import { MyDialog, type DialogParams, type DialogResponse } from "./MyDialog";
 
 const sideMenuItems = [
