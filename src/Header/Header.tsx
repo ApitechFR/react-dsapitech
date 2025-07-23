@@ -91,6 +91,7 @@ export type HeaderProps = {
     style?: CSSProperties;
     /** Default: false */
     disableDisplay?: boolean;
+    mainLogoURL?: string;
 };
 
 export namespace HeaderProps {
@@ -110,7 +111,7 @@ export namespace HeaderProps {
         export type Button = Common & {
             linkProps?: never;
             buttonProps: ComponentProps<"button"> &
-                Record<`data-${string}`, string | boolean | null | undefined>;
+            Record<`data-${string}`, string | boolean | null | undefined>;
         };
     }
 }
@@ -137,6 +138,7 @@ export const Header = memo(
             classes = {},
             style,
             disableDisplay = false,
+            mainLogoURL,
             ...rest
         } = props;
 
@@ -226,19 +228,23 @@ export const Header = memo(
                                             classes.brandTop
                                         )}
                                     >
-                                        <div className={cx(fr.cx("fr-header__logo"), classes.logo)}>
-                                            {(() => {
-                                                const children = (
-                                                    <p className={fr.cx("fr-logo")}>{brandTop}</p>
-                                                );
+                                        {(() => {
+                                            const children = (
+                                                <img
+                                                    className="fr-header__logo__apitech"
+                                                    src={
+                                                        mainLogoURL ||
+                                                        "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312"
+                                                    }
+                                                />
+                                            );
 
-                                                return serviceTitle !== undefined ? (
-                                                    children
-                                                ) : (
-                                                    <Link {...homeLinkProps}>{children}</Link>
-                                                );
-                                            })()}
-                                        </div>
+                                            return operatorLogo !== undefined ? (
+                                                children
+                                            ) : (
+                                                <Link {...homeLinkProps}>{children}</Link>
+                                            );
+                                        })()}
                                         {operatorLogo !== undefined && (
                                             <div
                                                 className={cx(
@@ -287,38 +293,38 @@ export const Header = memo(
                                         {(quickAccessItems.length > 0 ||
                                             navigation !== undefined ||
                                             isSearchBarEnabled) && (
-                                            <div
-                                                className={cx(
-                                                    fr.cx("fr-header__navbar"),
-                                                    classes.navbar
-                                                )}
-                                            >
-                                                {isSearchBarEnabled && (
-                                                    <button
-                                                        id={`${id}-search-button`}
-                                                        className={fr.cx(
-                                                            "fr-btn--search",
-                                                            "fr-btn"
-                                                        )}
-                                                        data-fr-opened={false}
-                                                        aria-controls={searchModalId}
-                                                        title={tSearchBar("label")}
-                                                    >
-                                                        {tSearchBar("label")}
-                                                    </button>
-                                                )}
-                                                <button
-                                                    className={fr.cx("fr-btn--menu", "fr-btn")}
-                                                    data-fr-opened="false"
-                                                    aria-controls={menuModalId}
-                                                    aria-haspopup="menu"
-                                                    id={menuButtonId}
-                                                    title={t("menu")}
+                                                <div
+                                                    className={cx(
+                                                        fr.cx("fr-header__navbar"),
+                                                        classes.navbar
+                                                    )}
                                                 >
-                                                    {t("menu")}
-                                                </button>
-                                            </div>
-                                        )}
+                                                    {isSearchBarEnabled && (
+                                                        <button
+                                                            id={`${id}-search-button`}
+                                                            className={fr.cx(
+                                                                "fr-btn--search",
+                                                                "fr-btn"
+                                                            )}
+                                                            data-fr-opened={false}
+                                                            aria-controls={searchModalId}
+                                                            title={tSearchBar("label")}
+                                                        >
+                                                            {tSearchBar("label")}
+                                                        </button>
+                                                    )}
+                                                    <button
+                                                        className={fr.cx("fr-btn--menu", "fr-btn")}
+                                                        data-fr-opened="false"
+                                                        aria-controls={menuModalId}
+                                                        aria-haspopup="menu"
+                                                        id={menuButtonId}
+                                                        title={t("menu")}
+                                                    >
+                                                        {t("menu")}
+                                                    </button>
+                                                </div>
+                                            )}
                                     </div>
                                     {serviceTitle !== undefined && (
                                         <div

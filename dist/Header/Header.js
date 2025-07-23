@@ -25,7 +25,7 @@ import { useTranslation as useSearchBarTranslation } from "../SearchBar/SearchBa
 export const headerMenuModalIdPrefix = "header-menu-modal";
 /** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-header> */
 export const Header = memo(forwardRef((props, ref) => {
-    const { className, id: id_props, brandTop, serviceTitle, serviceTagline, homeLinkProps, navigation = undefined, quickAccessItems = [], operatorLogo, renderSearchInput, clearSearchInputOnSearch = false, allowEmptySearch = false, onSearchButtonClick, classes = {}, style, disableDisplay = false } = props, rest = __rest(props, ["className", "id", "brandTop", "serviceTitle", "serviceTagline", "homeLinkProps", "navigation", "quickAccessItems", "operatorLogo", "renderSearchInput", "clearSearchInputOnSearch", "allowEmptySearch", "onSearchButtonClick", "classes", "style", "disableDisplay"]);
+    const { className, id: id_props, brandTop, serviceTitle, serviceTagline, homeLinkProps, navigation = undefined, quickAccessItems = [], operatorLogo, renderSearchInput, clearSearchInputOnSearch = false, allowEmptySearch = false, onSearchButtonClick, classes = {}, style, disableDisplay = false, mainLogoURL } = props, rest = __rest(props, ["className", "id", "brandTop", "serviceTitle", "serviceTagline", "homeLinkProps", "navigation", "quickAccessItems", "operatorLogo", "renderSearchInput", "clearSearchInputOnSearch", "allowEmptySearch", "onSearchButtonClick", "classes", "style", "disableDisplay", "mainLogoURL"]);
     assert();
     const id = id_props !== null && id_props !== void 0 ? id_props : "fr-header";
     const menuModalId = `${headerMenuModalIdPrefix}-${id}`;
@@ -64,10 +64,11 @@ export const Header = memo(forwardRef((props, ref) => {
                     React.createElement("div", { className: cx(fr.cx("fr-header__body-row"), classes.bodyRow) },
                         React.createElement("div", { className: cx(fr.cx("fr-header__brand", !hasOperatorLink && "fr-enlarge-link"), classes.brand) },
                             React.createElement("div", { className: cx(fr.cx("fr-header__brand-top"), classes.brandTop) },
-                                React.createElement("div", { className: cx(fr.cx("fr-header__logo"), classes.logo) }, (() => {
-                                    const children = (React.createElement("p", { className: fr.cx("fr-logo") }, brandTop));
-                                    return serviceTitle !== undefined ? (children) : (React.createElement(Link, Object.assign({}, homeLinkProps), children));
-                                })()),
+                                (() => {
+                                    const children = (React.createElement("img", { className: "fr-header__logo__apitech", src: mainLogoURL ||
+                                            "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312" }));
+                                    return operatorLogo !== undefined ? (children) : (React.createElement(Link, Object.assign({}, homeLinkProps), children));
+                                })(),
                                 operatorLogo !== undefined && (React.createElement("div", { className: cx(fr.cx("fr-header__operator", hasOperatorLink && "fr-enlarge-link"), classes.operator) }, (() => {
                                     const children = (React.createElement("img", { className: cx(fr.cx("fr-responsive-img"), classes.operator), style: (() => {
                                             switch (operatorLogo.orientation) {

@@ -91,6 +91,7 @@ export type HeaderProps = {
     style?: CSSProperties;
     /** Default: false */
     disableDisplay?: boolean;
+    mainLogoURL?: string;
 };
 
 export namespace HeaderProps {
@@ -137,6 +138,7 @@ export const Header = memo(
             classes = {},
             style,
             disableDisplay = false,
+            mainLogoURL,
             ...rest
         } = props;
 
@@ -226,19 +228,23 @@ export const Header = memo(
                                             classes.brandTop
                                         )}
                                     >
-                                        <div className={cx(fr.cx("fr-header__logo"), classes.logo)}>
-                                            {(() => {
-                                                const children = (
-                                                    <p className={fr.cx("fr-logo")}>{brandTop}</p>
-                                                );
+                                        {(() => {
+                                            const children = (
+                                                <img
+                                                    className="fr-header__logo__apitech"
+                                                    src={
+                                                        mainLogoURL ||
+                                                        "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312"
+                                                    }
+                                                />
+                                            );
 
-                                                return serviceTitle !== undefined ? (
-                                                    children
-                                                ) : (
-                                                    <Link {...homeLinkProps}>{children}</Link>
-                                                );
-                                            })()}
-                                        </div>
+                                            return operatorLogo !== undefined ? (
+                                                children
+                                            ) : (
+                                                <Link {...homeLinkProps}>{children}</Link>
+                                            );
+                                        })()}
                                         {operatorLogo !== undefined && (
                                             <div
                                                 className={cx(

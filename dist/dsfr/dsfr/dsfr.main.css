@@ -1,5 +1,5 @@
 /*!
- * DSAPITECH v1.13.7 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ * DSAPITECH v1.13.9 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
  */
 @charset "UTF-8";
 
@@ -17448,6 +17448,7 @@ a.fr-share__link:not([href]) {
   --ol-content: none;
   width: 100%;
   padding-top: 2rem;
+  border-top: 3px solid #000091;
 
   /**
    * Conteneur du bloc marque, avec le logo principal et éventuellement
@@ -17571,7 +17572,7 @@ a.fr-share__link:not([href]) {
 
 .fr-footer__logo__apitech {
   max-height: 70px;
-  max-width: 300px;
+  max-width: 200px;
 }
 
 /**
@@ -19941,6 +19942,11 @@ a.fr-password__btn:not([href]) {
   align-items: center;
   justify-content: flex-start;
   margin: 0 -1rem;
+}
+
+.fr-header__logo__apitech {
+  max-height: 70px;
+  max-width: 200px;
 }
 
 .fr-header__brand {
@@ -26615,7 +26621,6 @@ a.fr-password__btn:not([href]) {
   }
 
   .fr-footer {
-    border-top: 2px solid;
     padding-top: 1.875rem;
   }
 

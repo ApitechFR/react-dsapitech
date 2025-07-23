@@ -16,7 +16,7 @@
   integrity sha512-jBSfS/qL0v9e8pjJKlISggcx/qlhZ2g0VcvK817Y2zK4ThvVakAd09XyzIKutJOmCuf+kd4ciT1NSNdM7uI48w==
 
 "@apitechfr/dsapitech@file:../dsapitech":
-  version "1.13.6"
+  version "1.13.8"
   resolved "file:../dsapitech"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.27.1", "@babel/code-frame@^7.5.5", "@babel/code-frame@^7.8.3":
