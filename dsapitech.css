@@ -1,0 +1,64 @@
+:root {
+    --background-action-high-blue-france: #1d3e87;
+    --background-action-high-blue-france-hover: #1a73e8;
+    --background-action-high-blue-france-active: #155ab6;
+    --text-action-high-blue-france: #082954;
+    --border-action-high-blue-france: #1d3e87;
+    --background-active-blue-france: #1a73e8;
+    --text-inverted-blue-france: #b4cff2;
+    /* 
+    --logo-footer-url: url("https://oneteamstore.com/image/cache/catalog/journal3/brands/brand-apitech-600x315w.png");
+    --logo-header-url: url("https://oneteamstore.com/image/cache/catalog/journal3/brands/brand-apitech-600x315w.png");
+
+    --logo-footer-width: 100px;
+    --logo-footer-height: 70px;
+
+    --logo-header-width: 120px;
+    --logo-header-height: 70px; */
+}
+
+
+
+:root[data-fr-theme=dark] {
+    --background-action-high-blue-france: #285fd5;
+    --background-action-high-blue-france-hover: #4688dd;
+    --background-action-high-blue-france-active: #0864dc;
+    --text-action-high-blue-france: #d7e2f0;
+    --border-action-high-blue-france: #285fd5;
+    --background-active-blue-france: #4688dd;
+    --text-inverted-blue-france: #ffffff;
+}
+
+/* .fr-footer__brand>a>.fr-logo::before {
+    content: "";
+    display: inline-block;
+    width: var(--logo-footer-width);
+    height: var(--logo-footer-height);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--logo-footer-url);
+    margin: 0;
+}
+
+.fr-header__brand-top>.fr-header__logo>a>.fr-logo::before {
+    content: "";
+    display: inline-block;
+    width: var(--logo-header-width);
+    height: var(--logo-header-height);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--logo-header-url);
+    margin: 0;
+} */
+
+
+.fr-btn {
+    border-radius: 50px 10px 50px 50px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif !important;
+    border: #082954 1px solid;
+}

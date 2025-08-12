@@ -1,6 +1,6 @@
 {
     "name": "@apitechfr/react-dsapitech",
-    "version": "1.23.13",
+    "version": "1.23.7",
     "description": "Apitech Design System React integration library",
     "private": false,
     "publishConfig": {
@@ -13,6 +13,7 @@
     "scripts": {
         "prepare": "patch-package",
         "build": "ts-node -T scripts/build",
+        "postbuild": "cp dsapitech.css dist/dsapitech.css",
         "_link": "ts-node -T scripts/link-in-integration-apps.ts",
         "link-external": "ts-node -T scripts/link-in-external-project.ts",
         "start-cra": "yarn build && yarn _link && ((tsc -w -p src) & (cd test/integration/cra && yarn start))",

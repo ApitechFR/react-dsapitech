@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Light.woff2") format("woff2"),
         url("./Marianne-Light.woff") format("woff");
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Light_Italic.woff2") format("woff2"),
         url("./Marianne-Light_Italic.woff") format("woff");
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Regular.woff2") format("woff2"),
         url("./Marianne-Regular.woff") format("woff");
@@ -29,7 +29,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Regular_Italic.woff2") format("woff2"),
         url("./Marianne-Regular_Italic.woff") format("woff");
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Medium.woff2") format("woff2"),
         url("./Marianne-Medium.woff") format("woff");
@@ -49,7 +49,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Medium_Italic.woff2") format("woff2"),
         url("./Marianne-Medium_Italic.woff") format("woff");
@@ -59,7 +59,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Bold.woff2") format("woff2"),
         url("./Marianne-Bold.woff") format("woff");
@@ -69,7 +69,7 @@
 }
 
 @font-face {
-    font-family: Marianne;
+    font-family: Inter;
     src:
         url("./Marianne-Bold_Italic.woff2") format("woff2"),
         url("./Marianne-Bold_Italic.woff") format("woff");
