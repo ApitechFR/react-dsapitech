@@ -287,7 +287,7 @@ export const Footer = memo(
                                     <img
                                         className="fr-footer__logo__apitech"
                                         src={
-                                            theme === "dark" ? (mainLogoURLDark || "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312") : (mainLogoURL || "url")
+                                            theme === "dark" ? (mainLogoURLDark || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png") : (mainLogoURL || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png")
 
                                         }
                                     />
