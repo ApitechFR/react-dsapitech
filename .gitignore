@@ -45,7 +45,7 @@ jspm_packages
 /dsfr
 /src/fr/generatedFromCss
 /storybook-static
-/dist
+dist/
 
 
 

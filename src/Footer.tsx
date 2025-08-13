@@ -12,6 +12,7 @@ import type { FrIconClassName, RiIconClassName } from "./fr/generatedFromCss/cla
 import { getBrandTopAndHomeLinkProps } from "./zz_internal/brandTopAndHomeLinkProps";
 import { typeGuard } from "tsafe/typeGuard";
 import { id } from "tsafe/id";
+import { useFrTheme } from "./dsapitech_hooks";
 
 export type FooterProps = {
     id?: string;
@@ -80,6 +81,7 @@ export type FooterProps = {
     linkListTitle?: ReactNode;
     domains?: string[];
     mainLogoURL?: string;
+    mainLogoURLDark: string;
 };
 
 export namespace FooterProps {
@@ -175,8 +177,11 @@ export const Footer = memo(
             linkListTitle,
             domains = ["apitech.fr"],
             mainLogoURL,
+            mainLogoURLDark,
             ...rest
         } = props;
+
+        const theme = useFrTheme();
 
         assert<Equals<keyof typeof rest, never>>();
 
@@ -282,8 +287,8 @@ export const Footer = memo(
                                     <img
                                         className="fr-footer__logo__apitech"
                                         src={
-                                            mainLogoURL ||
-                                            "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312"
+                                            theme === "dark" ? (mainLogoURLDark || "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312") : (mainLogoURL || "url")
+
                                         }
                                     />
                                 );
