@@ -24,6 +24,7 @@ import { setBrandTopAndHomeLinkProps } from "../zz_internal/brandTopAndHomeLinkP
 import { typeGuard } from "tsafe/typeGuard";
 import { SearchButton } from "../SearchBar/SearchButton";
 import { useTranslation as useSearchBarTranslation } from "../SearchBar/SearchBar";
+import { useFrTheme } from "../dsapitech_hooks";
 
 export type HeaderProps = {
     className?: string;
@@ -92,6 +93,7 @@ export type HeaderProps = {
     /** Default: false */
     disableDisplay?: boolean;
     mainLogoURL?: string;
+    mainLogoURLDark?: string;
 };
 
 export namespace HeaderProps {
@@ -139,8 +141,11 @@ export const Header = memo(
             style,
             disableDisplay = false,
             mainLogoURL,
+            mainLogoURLDark,
             ...rest
         } = props;
+
+        const theme = useFrTheme();
 
         assert<Equals<keyof typeof rest, never>>();
 
@@ -233,8 +238,8 @@ export const Header = memo(
                                                 <img
                                                     className="fr-header__logo__apitech"
                                                     src={
-                                                        mainLogoURL ||
-                                                        "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312"
+                                                        theme === "dark" ? (mainLogoURLDark || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png") : (mainLogoURL || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png")
+
                                                     }
                                                 />
                                             );

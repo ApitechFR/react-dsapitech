@@ -12,6 +12,7 @@ import type { FrIconClassName, RiIconClassName } from "./fr/generatedFromCss/cla
 import { getBrandTopAndHomeLinkProps } from "./zz_internal/brandTopAndHomeLinkProps";
 import { typeGuard } from "tsafe/typeGuard";
 import { id } from "tsafe/id";
+import { useFrTheme } from "./dsapitech_hooks";
 
 export type FooterProps = {
     id?: string;
@@ -80,6 +81,7 @@ export type FooterProps = {
     linkListTitle?: ReactNode;
     domains?: string[];
     mainLogoURL?: string;
+    mainLogoURLDark: string;
 };
 
 export namespace FooterProps {
@@ -175,8 +177,11 @@ export const Footer = memo(
             linkListTitle,
             domains = ["apitech.fr"],
             mainLogoURL,
+            mainLogoURLDark,
             ...rest
         } = props;
+
+        const theme = useFrTheme();
 
         assert<Equals<keyof typeof rest, never>>();
 
@@ -269,177 +274,130 @@ export const Footer = memo(
                         </div>
                     </div>
                 )}
-                <div className={cx(fr.cx("fr-footer__body"), classes.body)}>
-                    <div
-                        className={cx(
-                            fr.cx("fr-footer__brand", "fr-enlarge-link"),
-                            classes.brand
-                        )}
-                    >
-                        {(() => {
-                            const children = (
-                                <img
-                                    className="fr-footer__logo__apitech"
-                                    src={
-                                        mainLogoURL ||
-                                        "https://www.figma.com/component/b96539974a6ef9813cf63852e113d5ab08fefabc/thumbnail?ver=10532%3A0&fuid=1339886080221657312"
-                                    }
-                                />
-                            );
-
-                            return operatorLogo !== undefined ? (
-                                children
-                            ) : (
-                                <Link {...homeLinkProps}>{children}</Link>
-                            );
-                        })()}
-                        {operatorLogo !== undefined && (
-                            <Link
-                                {...homeLinkProps}
-                                className={cx(
-                                    fr.cx("fr-footer__brand-link"),
-                                    classes.brandLink,
-                                    homeLinkProps.className
-                                )}
-                            >
-                                <img
-                                    className={cx(
-                                        fr.cx("fr-footer__logo"),
-                                        classes.operatorLogo
-                                    )}
-                                    style={(() => {
-                                        switch (operatorLogo.orientation) {
-                                            case "vertical":
-                                                return { "width": "3.5rem" };
-                                            case "horizontal":
-                                                return { "maxWidth": "9.0625rem" };
-                                        }
-                                    })()}
-                                    src={operatorLogo.imgUrl}
-                                    alt={operatorLogo.alt}
-                                />
-                            </Link>
-                        )}
-                    </div>
-                    <div className={cx(fr.cx("fr-footer__content"), classes.content)}>
-                        {contentDescription !== undefined && (
-                            <p
-                                className={cx(
-                                    fr.cx("fr-footer__content-desc"),
-                                    classes.contentDesc
-                                )}
-                            >
-                                {contentDescription}
-                            </p>
-                        )}
-                        <ul
-                            className={cx(
-                                fr.cx("fr-footer__content-list"),
-                                classes.contentList
-                            )}
-                        >
-                            {domains.map((domain, i) => (
-                                <li
-                                    className={cx(
-                                        fr.cx("fr-footer__content-item" as any),
-                                        classes.contentItem
-                                    )}
-                                    key={i}
-                                >
-                                    <a
-                                        className={cx(
-                                            fr.cx("fr-footer__content-link"),
-                                            classes.contentLink
-                                        )}
-                                        target="_blank"
-                                        href={`https://${domain}`}
-                                        title={`${domain} - ${t("open new window")}`}
-                                        id={`footer-${domain.replace(/\./g, "-")}-link`}
-                                    >
-                                        {domain}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-                {partnersLogos !== undefined && (
-                    <div className={cx(fr.cx("fr-footer__partners"), classes.partners)}>
-                        <h2
-                            className={cx(
-                                fr.cx("fr-footer__partners-title"),
-                                classes.partnersTitle
-                            )}
-                        >
-                            {t("our partners")}
-                        </h2>
+                <div className={fr.cx("fr-container")}>
+                    <div className={cx(fr.cx("fr-footer__body"), classes.body)}>
                         <div
                             className={cx(
-                                fr.cx("fr-footer__partners-logos"),
-                                classes.partnersLogos
+                                fr.cx("fr-footer__brand", "fr-enlarge-link"),
+                                classes.brand
                             )}
                         >
-                            {mainPartnersLogo !== undefined && (
-                                <div
+                            {(() => {
+                                const children = (
+                                    <img
+                                        className="fr-footer__logo__apitech"
+                                        src={
+                                            theme === "dark" ? (mainLogoURLDark || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png") : (mainLogoURL || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png")
+
+                                        }
+                                    />
+                                );
+
+                                return operatorLogo !== undefined ? (
+                                    children
+                                ) : (
+                                    <Link {...homeLinkProps}>{children}</Link>
+                                );
+                            })()}
+                            {operatorLogo !== undefined && (
+                                <Link
+                                    {...homeLinkProps}
                                     className={cx(
-                                        fr.cx("fr-footer__partners-main"),
-                                        classes.partnersMain
+                                        fr.cx("fr-footer__brand-link"),
+                                        classes.brandLink,
+                                        homeLinkProps.className
                                     )}
                                 >
-                                    {(() => {
-                                        const children = (
-                                            <img
-                                                alt={mainPartnersLogo.alt}
-                                                style={{ height: "5.625rem" }} // should not be hardcoded. Can conflict with ContentSecurityPolicy when "unsafe-inline" is not allowed
-                                                src={mainPartnersLogo.imgUrl}
-                                                className={cx(
-                                                    fr.cx("fr-footer__logo"),
-                                                    classes.logo
-                                                )}
-                                            />
-                                        );
-
-                                        const hasLinkProps =
-                                            mainPartnersLogo.linkProps !== undefined ||
-                                            mainPartnersLogo.href !== undefined;
-
-                                        return hasLinkProps ? (
-                                            <Link
-                                                {...mainPartnersLogo.linkProps}
-                                                href={
-                                                    mainPartnersLogo.href ??
-                                                    mainPartnersLogo.linkProps?.href
-                                                }
-                                                className={cx(
-                                                    fr.cx(
-                                                        "fr-footer__partners-link",
-                                                        "fr-raw-link"
-                                                    ),
-                                                    classes.partnersLink
-                                                )}
-                                            >
-                                                {children}
-                                            </Link>
-                                        ) : (
-                                            children
-                                        );
-                                    })()}
-                                </div>
+                                    <img
+                                        className={cx(
+                                            fr.cx("fr-footer__logo"),
+                                            classes.operatorLogo
+                                        )}
+                                        style={(() => {
+                                            switch (operatorLogo.orientation) {
+                                                case "vertical":
+                                                    return { "width": "3.5rem" };
+                                                case "horizontal":
+                                                    return { "maxWidth": "9.0625rem" };
+                                            }
+                                        })()}
+                                        src={operatorLogo.imgUrl}
+                                        alt={operatorLogo.alt}
+                                    />
+                                </Link>
                             )}
-                            {subPartnersLogos.length !== 0 && (
-                                <div
+                        </div>
+                        <div className={cx(fr.cx("fr-footer__content"), classes.content)}>
+                            {contentDescription !== undefined && (
+                                <p
                                     className={cx(
-                                        fr.cx("fr-footer__partners-sub"),
-                                        classes.partnersSub
+                                        fr.cx("fr-footer__content-desc"),
+                                        classes.contentDesc
                                     )}
                                 >
-                                    <ul>
-                                        {subPartnersLogos.map((logo, i) => {
+                                    {contentDescription}
+                                </p>
+                            )}
+                            <ul
+                                className={cx(
+                                    fr.cx("fr-footer__content-list"),
+                                    classes.contentList
+                                )}
+                            >
+                                {domains.map((domain, i) => (
+                                    <li
+                                        className={cx(
+                                            fr.cx("fr-footer__content-item" as any),
+                                            classes.contentItem
+                                        )}
+                                        key={i}
+                                    >
+                                        <a
+                                            className={cx(
+                                                fr.cx("fr-footer__content-link"),
+                                                classes.contentLink
+                                            )}
+                                            target="_blank"
+                                            href={`https://${domain}`}
+                                            title={`${domain} - ${t("open new window")}`}
+                                            id={`footer-${domain.replace(/\./g, "-")}-link`}
+                                        >
+                                            {domain}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    {partnersLogos !== undefined && (
+                        <div className={cx(fr.cx("fr-footer__partners"), classes.partners)}>
+                            <h2
+                                className={cx(
+                                    fr.cx("fr-footer__partners-title"),
+                                    classes.partnersTitle
+                                )}
+                            >
+                                {t("our partners")}
+                            </h2>
+                            <div
+                                className={cx(
+                                    fr.cx("fr-footer__partners-logos"),
+                                    classes.partnersLogos
+                                )}
+                            >
+                                {mainPartnersLogo !== undefined && (
+                                    <div
+                                        className={cx(
+                                            fr.cx("fr-footer__partners-main"),
+                                            classes.partnersMain
+                                        )}
+                                    >
+                                        {(() => {
                                             const children = (
                                                 <img
-                                                    alt={logo.alt}
-                                                    src={logo.imgUrl}
-                                                    style={{ "height": "5.625rem" }} // should not be hardcoded. Can conflict with ContentSecurityPolicy when "unsafe-inline" is not allowed
+                                                    alt={mainPartnersLogo.alt}
+                                                    style={{ height: "5.625rem" }} // should not be hardcoded. Can conflict with ContentSecurityPolicy when "unsafe-inline" is not allowed
+                                                    src={mainPartnersLogo.imgUrl}
                                                     className={cx(
                                                         fr.cx("fr-footer__logo"),
                                                         classes.logo
@@ -448,98 +406,147 @@ export const Footer = memo(
                                             );
 
                                             const hasLinkProps =
-                                                logo.linkProps !== undefined ||
-                                                logo.href !== undefined;
+                                                mainPartnersLogo.linkProps !== undefined ||
+                                                mainPartnersLogo.href !== undefined;
 
-                                            return (
-                                                <li key={i}>
-                                                    {hasLinkProps ? (
-                                                        <Link
-                                                            {...logo.linkProps}
-                                                            href={
-                                                                logo.href ??
-                                                                logo.linkProps?.href
-                                                            }
-                                                            className={cx(
-                                                                fr.cx(
-                                                                    "fr-footer__partners-link",
-                                                                    "fr-raw-link"
-                                                                ),
-                                                                classes.partnersLink
-                                                            )}
-                                                        >
-                                                            {children}
-                                                        </Link>
-                                                    ) : (
-                                                        children
+                                            return hasLinkProps ? (
+                                                <Link
+                                                    {...mainPartnersLogo.linkProps}
+                                                    href={
+                                                        mainPartnersLogo.href ??
+                                                        mainPartnersLogo.linkProps?.href
+                                                    }
+                                                    className={cx(
+                                                        fr.cx(
+                                                            "fr-footer__partners-link",
+                                                            "fr-raw-link"
+                                                        ),
+                                                        classes.partnersLink
                                                     )}
-                                                </li>
+                                                >
+                                                    {children}
+                                                </Link>
+                                            ) : (
+                                                children
                                             );
-                                        })}
-                                    </ul>
-                                </div>
-                            )}
+                                        })()}
+                                    </div>
+                                )}
+                                {subPartnersLogos.length !== 0 && (
+                                    <div
+                                        className={cx(
+                                            fr.cx("fr-footer__partners-sub"),
+                                            classes.partnersSub
+                                        )}
+                                    >
+                                        <ul>
+                                            {subPartnersLogos.map((logo, i) => {
+                                                const children = (
+                                                    <img
+                                                        alt={logo.alt}
+                                                        src={logo.imgUrl}
+                                                        style={{ "height": "5.625rem" }} // should not be hardcoded. Can conflict with ContentSecurityPolicy when "unsafe-inline" is not allowed
+                                                        className={cx(
+                                                            fr.cx("fr-footer__logo"),
+                                                            classes.logo
+                                                        )}
+                                                    />
+                                                );
+
+                                                const hasLinkProps =
+                                                    logo.linkProps !== undefined ||
+                                                    logo.href !== undefined;
+
+                                                return (
+                                                    <li key={i}>
+                                                        {hasLinkProps ? (
+                                                            <Link
+                                                                {...logo.linkProps}
+                                                                href={
+                                                                    logo.href ??
+                                                                    logo.linkProps?.href
+                                                                }
+                                                                className={cx(
+                                                                    fr.cx(
+                                                                        "fr-footer__partners-link",
+                                                                        "fr-raw-link"
+                                                                    ),
+                                                                    classes.partnersLink
+                                                                )}
+                                                            >
+                                                                {children}
+                                                            </Link>
+                                                        ) : (
+                                                            children
+                                                        )}
+                                                    </li>
+                                                );
+                                            })}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                )}
-                <div className={cx(fr.cx("fr-footer__bottom"), classes.bottom)}>
-                    <ul className={cx(fr.cx("fr-footer__bottom-list"), classes.bottomList)}>
-                        {[
-                            ...(websiteMapLinkProps === undefined
-                                ? []
-                                : [
-                                    id<FooterProps.BottomItem>({
-                                        "text": t("website map"),
-                                        "linkProps": websiteMapLinkProps
+                    )}
+                    <div className={cx(fr.cx("fr-footer__bottom"), classes.bottom)}>
+                        <ul className={cx(fr.cx("fr-footer__bottom-list"), classes.bottomList)}>
+                            {[
+                                ...(websiteMapLinkProps === undefined
+                                    ? []
+                                    : [
+                                        id<FooterProps.BottomItem>({
+                                            "text": t("website map"),
+                                            "linkProps": websiteMapLinkProps
+                                        })
+                                    ]),
+                                id<FooterProps.BottomItem>({
+                                    "text": `${t("accessibility")} : ${t(accessibility)}`,
+                                    "linkProps": accessibilityLinkProps ?? ({} as any)
+                                }),
+                                ...(termsLinkProps === undefined
+                                    ? []
+                                    : [
+                                        id<FooterProps.BottomItem>({
+                                            "text": t("terms"),
+                                            "linkProps": termsLinkProps
+                                        })
+                                    ]),
+                                ...bottomItems
+                            ].map((bottomItem, i) => (
+                                <li
+                                    className={cx(
+                                        fr.cx("fr-footer__bottom-item"),
+                                        classes.bottomItem,
+                                        className
+                                    )}
+                                    key={i}
+                                >
+                                    {!typeGuard<FooterProps.BottomItem>(
+                                        bottomItem,
+                                        bottomItem instanceof Object && "text" in bottomItem
+                                    ) ? (
+                                        bottomItem
+                                    ) : (
+                                        <FooterBottomItem
+                                            classes={{
+                                                "bottomLink": classes.bottomLink
+                                            }}
+                                            bottomItem={bottomItem}
+                                        />
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                        <div className={cx(fr.cx("fr-footer__bottom-copy"), classes.bottomCopy)}>
+                            <p>
+                                {license === undefined
+                                    ? t("license mention", {
+                                        "licenseUrl":
+                                            "https://github.com/etalab/licence-ouverte/blob/master/LO.md"
                                     })
-                                ]),
-                            id<FooterProps.BottomItem>({
-                                "text": `${t("accessibility")} : ${t(accessibility)}`,
-                                "linkProps": accessibilityLinkProps ?? ({} as any)
-                            }),
-                            ...(termsLinkProps === undefined
-                                ? []
-                                : [
-                                    id<FooterProps.BottomItem>({
-                                        "text": t("terms"),
-                                        "linkProps": termsLinkProps
-                                    })
-                                ]),
-                            ...bottomItems
-                        ].map((bottomItem, i) => (
-                            <li
-                                className={cx(
-                                    fr.cx("fr-footer__bottom-item"),
-                                    classes.bottomItem,
-                                    className
-                                )}
-                                key={i}
-                            >
-                                {!typeGuard<FooterProps.BottomItem>(
-                                    bottomItem,
-                                    bottomItem instanceof Object && "text" in bottomItem
-                                ) ? (
-                                    bottomItem
-                                ) : (
-                                    <FooterBottomItem
-                                        classes={{
-                                            "bottomLink": classes.bottomLink
-                                        }}
-                                        bottomItem={bottomItem}
-                                    />
-                                )}
-                            </li>
-                        ))}
-                    </ul>
-                    <div className={cx(fr.cx("fr-footer__bottom-copy"), classes.bottomCopy)}>
-                        <p>
-                            {license === undefined
-                                ? t("license mention", {
-                                    "licenseUrl":
-                                        "https://github.com/etalab/licence-ouverte/blob/master/LO.md"
-                                })
-                                : license}
-                        </p>
+                                    : license}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </footer>
