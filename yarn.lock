@@ -15,9 +15,10 @@
   resolved "https://registry.npmjs.org/@apitechfr/dsapitech-chart/-/dsapitech-chart-2.0.7.tgz"
   integrity sha512-jBSfS/qL0v9e8pjJKlISggcx/qlhZ2g0VcvK817Y2zK4ThvVakAd09XyzIKutJOmCuf+kd4ciT1NSNdM7uI48w==
 
-"@apitechfr/dsapitech@file:../dsapitech":
-  version "1.13.8"
-  resolved "file:../dsapitech"
+"@apitechfr/dsapitech@^1.13.12":
+  version "1.13.12"
+  resolved "https://registry.npmjs.org/@apitechfr/dsapitech/-/dsapitech-1.13.12.tgz"
+  integrity sha512-eE5MnVUEOF66Zv315E7Sjw6rLvRkFdTM7nwY7fVNZwToCoDY69Xv0P0/BP7YC6gzzh8IhDzy1vz1yQdrCFMIEA==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.27.1", "@babel/code-frame@^7.5.5", "@babel/code-frame@^7.8.3":
   version "7.27.1"

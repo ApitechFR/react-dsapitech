@@ -238,7 +238,7 @@ export const Header = memo(
                                                 <img
                                                     className="fr-header__logo__apitech"
                                                     src={
-                                                        theme === "dark" ? (mainLogoURLDark || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png") : (mainLogoURL || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png")
+                                                        theme === "dark" ? (mainLogoURLDark || "https://github.com/ApitechFR/dsapitech/blob/main/Apitech-Logo-Blanc.png?raw=true") : (mainLogoURL || "https://apitech.fr/wp-content/uploads/2025/06/Apitech-Logo-BleuNuit.png")
 
                                                     }
                                                 />
