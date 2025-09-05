@@ -13,7 +13,7 @@ npm i @apitechfr/react-dsapitech
     crossorigin="use-credentials" />
 
   <link rel="stylesheet" href="./node_modules/@apitechfr/react-dsapitech/main.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ApitechFR/react-dsapitech/refs/heads/main/dsapitech.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ApitechFR/react-dsapitech/dsapitech.css">
 ```
 
 ### 3 - Import and call the components you need
