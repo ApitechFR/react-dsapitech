@@ -7,7 +7,7 @@ import { fr } from "./fr";
 import { cx } from "./tools/cx";
 import { assert } from "tsafe/assert";
 import type { Equals } from "tsafe";
-import { createComponentI18nApi } from "./i18n";
+import { createComponentI18nApi, setUseLang } from "./i18n";
 import type { FrIconClassName, RiIconClassName } from "./fr/generatedFromCss/classNames";
 import { getBrandTopAndHomeLinkProps } from "./zz_internal/brandTopAndHomeLinkProps";
 import { typeGuard } from "tsafe/typeGuard";
@@ -17,6 +17,7 @@ import { useFrTheme } from "./dsapitech_hooks";
 export type FooterProps = {
     id?: string;
     className?: string;
+    lang?: string;
     accessibility: "non compliant" | "partially compliant" | "fully compliant";
     contentDescription?: ReactNode;
     websiteMapLinkProps?: RegisteredLinkProps;
@@ -178,6 +179,7 @@ export const Footer = memo(
             domains = ["apitech.fr"],
             mainLogoURL,
             mainLogoURLDark,
+            lang,
             ...rest
         } = props;
 
@@ -210,6 +212,11 @@ export const Footer = memo(
         const { Link } = getLink();
 
         const { t } = useTranslation();
+        React.useEffect(() => {
+            if (lang) {
+                setUseLang({ useLang: () => lang });
+            }
+        }, [lang]);
 
         const { main: mainPartnersLogo, sub: subPartnersLogos = [] } = partnersLogos ?? {};
 
@@ -220,6 +227,7 @@ export const Footer = memo(
                 role="contentinfo"
                 ref={ref}
                 style={style}
+                lang={lang}
                 {...rest}
             >
                 {linkList !== undefined && (
