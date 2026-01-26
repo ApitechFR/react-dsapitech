@@ -40,9 +40,10 @@ Les hooks utiles pour les exigeances Apitech sont créés dans le fichier `dsapi
   
 
 ### Header
-
-Dans le Header, les propriétés ```mainLogoURL``` et ```mainLogoURLDark``` ont été ajoutées, pour préciser les urls des logos souhaités pour le mode light et dark. Par défaut, c'est le logo Apitech qui est choisi.
+* `mainLogoUrl` : Url du logo pour le thème *light*
+* `mainLogoURLDark` : Url du logo pour le thème *dark*
 
 ### Footer
-
-Comme dans le header, les propriétés `mainLogoURL` et `mainLogoURLDark` ont été ajoutées, pour préciser les urls des logos souhaités pour le mode light et dark. Par défaut, c'est le logo Apitech qui est choisi.
+* `mainLogoUrl` : Url du logo pour le thème *light*
+* `mainLogoURLDark` : Url du logo pour le thème *dark*
+* `defaultApitechCustomTexts` : Dictionnaire des textes du footer. Contient 4 clés : `accessibility`, `intellectualProperty`, `websiteMap`, `terms`.
