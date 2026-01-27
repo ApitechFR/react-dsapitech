@@ -37,7 +37,6 @@ Les hooks utiles pour les exigeances Apitech sont créés dans le fichier `dsapi
   //...
   const theme = useFrTheme(); // "light" ou "dark"
   ```
-  
 
 ### Header
 * `mainLogoUrl` : Url du logo pour le thème *light*
@@ -47,3 +46,24 @@ Les hooks utiles pour les exigeances Apitech sont créés dans le fichier `dsapi
 * `mainLogoUrl` : Url du logo pour le thème *light*
 * `mainLogoURLDark` : Url du logo pour le thème *dark*
 * `defaultApitechCustomTexts` : Dictionnaire des textes du footer. Contient 4 clés : `accessibility`, `intellectualProperty`, `websiteMap`, `terms`.
+
+### apitechHeaderFooterDisplayItem
+Cette nouvelle fonction permet de personnaliser les textes du composant `headerFooterDisplayItem`. Elle s'utilise à la place de `headerFooterDisplayItem`, comme ceci : 
+```jsx
+<Footer
+        // other Footer props...
+        bottomItems={[
+          apitechHeaderFooterDisplayItem({
+            "display settings": "Paramètres d'affichage",
+            "close": "Fermer",
+            "pick a theme": `Choisissez un thème pour personnaliser l'apparence du site.`,
+            "light theme": `Thème clair`,
+            "dark theme": `Thème sombre`,
+            "system theme": `Système`,
+            "system theme hint": `Utilise les paramètres système.`
+          })
+        ]}
+      />
+```
+Cette fonction permet de personnaliser les textes du bouton des paramètres d'affichage, ainsi que les textes de la modal associée.
+
