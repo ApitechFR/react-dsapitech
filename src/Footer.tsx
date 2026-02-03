@@ -14,6 +14,14 @@ import { typeGuard } from "tsafe/typeGuard";
 import { id } from "tsafe/id";
 import { useFrTheme } from "./dsapitech_hooks";
 
+const defaultApitechCustomTexts = {
+    accessibility: "",
+    intellectualProperty: "",
+    websiteMap: "",
+    terms: "",
+    // Ajoute ici toutes les clés par défaut nécessaires
+};
+
 export type FooterProps = {
     id?: string;
     className?: string;
@@ -83,6 +91,7 @@ export type FooterProps = {
     domains?: string[];
     mainLogoURL?: string;
     mainLogoURLDark: string;
+    apitechCustomTexts?: Partial<typeof defaultApitechCustomTexts>;
 };
 
 export namespace FooterProps {
@@ -180,6 +189,7 @@ export const Footer = memo(
             mainLogoURL,
             mainLogoURLDark,
             lang,
+            apitechCustomTexts = defaultApitechCustomTexts,
             ...rest
         } = props;
 
@@ -503,19 +513,19 @@ export const Footer = memo(
                                     ? []
                                     : [
                                         id<FooterProps.BottomItem>({
-                                            "text": t("website map"),
+                                            "text": apitechCustomTexts["websiteMap"] || t("website map"),
                                             "linkProps": websiteMapLinkProps
                                         })
                                     ]),
                                 id<FooterProps.BottomItem>({
-                                    "text": `${t("accessibility")} : ${t(accessibility)}`,
+                                    "text": apitechCustomTexts["accessibility"] || `${t("accessibility")} : ${t(accessibility)}`,
                                     "linkProps": accessibilityLinkProps ?? ({} as any)
                                 }),
                                 ...(termsLinkProps === undefined
                                     ? []
                                     : [
                                         id<FooterProps.BottomItem>({
-                                            "text": t("terms"),
+                                            "text": apitechCustomTexts["terms"] || t("terms"),
                                             "linkProps": termsLinkProps
                                         })
                                     ]),

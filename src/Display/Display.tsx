@@ -7,24 +7,43 @@ import type { FooterProps } from "../Footer";
 import { createModal } from "../Modal";
 import { Artwork } from "./Artwork";
 
+
+const defaultApitechCustomTexts = {
+    "display settings": "",
+    "close": "",
+    "pick a theme": "",
+    "light theme": "",
+    "dark theme": "",
+    "system theme": "",
+    "system theme hint": "",
+};
+
 const modal = createModal({
     "isOpenedByDefault": false,
     "id": "fr-theme-modal"
 });
 
-export const headerFooterDisplayItem: HeaderProps.QuickAccessItem.Button &
-    FooterProps.BottomItem.Button = {
-    "buttonProps": modal.buttonProps,
-    "iconId": "fr-icon-theme-fill",
-    "text": (() => {
-        function Text() {
-            const { t } = useTranslation();
-            return <>{t("display settings")}</>;
-        }
 
-        return <Text />;
-    })()
-};
+export function apitechHeaderFooterDisplayItem(apitechCustomTexts?: Partial<typeof defaultApitechCustomTexts>): HeaderProps.QuickAccessItem.Button & FooterProps.BottomItem.Button {
+    modal.apitechCustomProperty = apitechCustomTexts;
+    return {
+        "buttonProps": modal.buttonProps,
+        "iconId": "fr-icon-theme-fill",
+        "text": (() => {
+            if (apitechCustomTexts?.["display settings"]) {
+                return <>{apitechCustomTexts["display settings"]}</>;
+            }
+            function Text() {
+                const { t } = useTranslation();
+                return <>{t("display settings")}</>;
+            }
+            return <Text />;
+        })()
+    };
+}
+
+// Pour compatibilité descendante
+export const headerFooterDisplayItem = apitechHeaderFooterDisplayItem();
 
 /** @see <https://components.react-dsfr.codegouv.studio/?path=/docs/components-display> */
 export function Display() {
@@ -41,15 +60,15 @@ export function Display() {
     })();
 
     return (
-        <modal.Component title={t("display settings")} size="small">
+        <modal.Component apitechCustomCloseText={modal.apitechCustomProperty?.close} title={modal.apitechCustomProperty?.["display settings"] || t("display settings")} size="small">
             <div /*id="fr-display"*/ className="fr-display">
                 <div className={fr.cx("fr-form-group" as any)}>
                     <fieldset className={fr.cx("fr-fieldset")}>
                         <legend
                             className={fr.cx("fr-fieldset__legend", "fr-text--regular")}
-                            //id="-legend"
+                        //id="-legend"
                         >
-                            {t("pick a theme")}
+                            {modal.apitechCustomProperty?.["pick a theme"] || t("pick a theme")}
                         </legend>
                         <div className={fr.cx("fr-fieldset__content")}>
                             {(["light", "dark", "system"] as const).map(theme => (
@@ -64,10 +83,10 @@ export function Display() {
                                         name="fr-radios-theme"
                                     />
                                     <label className="fr-label" htmlFor={getInputId(theme)}>
-                                        {t(`${theme} theme`)}
+                                        {modal.apitechCustomProperty?.[`${theme} theme`] || t(`${theme} theme`)}
                                         {theme === "system" && (
                                             <span className={fr.cx("fr-hint-text")}>
-                                                {t("system theme hint")}
+                                                {modal.apitechCustomProperty?.["system theme hint"] || t("system theme hint")}
                                             </span>
                                         )}
                                     </label>

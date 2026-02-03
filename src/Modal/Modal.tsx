@@ -21,9 +21,10 @@ export type ModalProps = {
     topAnchor?: boolean;
     iconId?: FrIconClassName | RiIconClassName;
     buttons?:
-        | [ModalProps.ActionAreaButtonProps, ...ModalProps.ActionAreaButtonProps[]]
-        | ModalProps.ActionAreaButtonProps;
+    | [ModalProps.ActionAreaButtonProps, ...ModalProps.ActionAreaButtonProps[]]
+    | ModalProps.ActionAreaButtonProps;
     style?: CSSProperties;
+    apitechCustomCloseText?: string;
 };
 
 export namespace ModalProps {
@@ -46,6 +47,7 @@ const Modal = memo(
             buttons: buttons_props,
             size = "medium",
             style,
+            apitechCustomCloseText,
             ...rest
         } = props;
 
@@ -55,8 +57,8 @@ const Modal = memo(
             buttons_props === undefined
                 ? undefined
                 : buttons_props instanceof Array
-                ? buttons_props
-                : [buttons_props];
+                    ? buttons_props
+                    : [buttons_props];
 
         const { t } = useTranslation();
         const titleId = `fr-modal-title-${id}`;
@@ -87,11 +89,11 @@ const Modal = memo(
                                 <div className={fr.cx("fr-modal__header")}>
                                     <button
                                         className={fr.cx("fr-btn--close", "fr-btn")}
-                                        title={t("close")}
+                                        title={apitechCustomCloseText || t("close")}
                                         aria-controls={id}
                                         type="button"
                                     >
-                                        {t("close")}
+                                        {apitechCustomCloseText || t("close")}
                                     </button>
                                 </div>
                                 <div className={fr.cx("fr-modal__content")}>
@@ -136,18 +138,18 @@ const Modal = memo(
                                                                 {...(!doClosesModal
                                                                     ? {}
                                                                     : "linkProps" in buttonProps
-                                                                    ? {
-                                                                          "linkProps": {
-                                                                              ...buttonProps.linkProps,
-                                                                              "aria-controls": id
-                                                                          } as any
-                                                                      }
-                                                                    : {
-                                                                          "nativeButtonProps": {
-                                                                              ...buttonProps.nativeButtonProps,
-                                                                              "aria-controls": id
-                                                                          } as any
-                                                                      })}
+                                                                        ? {
+                                                                            "linkProps": {
+                                                                                ...buttonProps.linkProps,
+                                                                                "aria-controls": id
+                                                                            } as any
+                                                                        }
+                                                                        : {
+                                                                            "nativeButtonProps": {
+                                                                                ...buttonProps.nativeButtonProps,
+                                                                                "aria-controls": id
+                                                                            } as any
+                                                                        })}
                                                             />
                                                         </li>
                                                     )
@@ -204,6 +206,7 @@ export function createModal(params: { isOpenedByDefault: boolean; id: string }):
     open: () => void;
     isOpenedByDefault: boolean;
     id: string;
+    apitechCustomProperty?: any;
 } {
     const { isOpenedByDefault, id } = params;
 
